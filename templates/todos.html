@@ -1,13 +1,13 @@
   <div class="list">
 
-    <div class="item" ng-class="{'editing-item': editing, 'edited': todo.edited, 'text-muted': todo.completed}"
+    <div class="item" ng-class="{'editing-item': editing, 'edited': todo.edited}"
       ng-repeat="todo in todos" ng-init="todo.completed = false">
 
       <div class='text-center'><button class='btn btn-default btn-xs' type='button' ng-click="addTodo($index)">+</button></div>
 
       <input ng-model="todo.completed" type="checkbox"/>
       <span ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
-        <label ng-click="editing = true" ng-hide="editing" ng-click="helloWorld()">
+        <label ng-click="editing = true" ng-hide="editing" ng-click="helloWorld()" ng-class="{'completed': todo.completed}">
           {{todo.name}}</label>
         <input ng-change="todo.edited = true" ng-blur="editing = false;" ng-show="editing" ng-model="todo.name" class="editing-label" type="text"/>
 
