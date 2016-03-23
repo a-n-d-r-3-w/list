@@ -11,7 +11,7 @@
           {{todo.name}}</label>
         <input ng-change="todo.edited = true" ng-blur="editing = false;" ng-show="editing" ng-model="todo.name" class="editing-label" type="text"/>
 
-        <button type='button' ng-show='mouseover' ng-click="deleteTodo(todo, $index)">delete</button>
+        <button class='btn btn-danger btn-xs' type='button' ng-show='mouseover' ng-click="deleteTodo(todo, $index)">delete</button>
       </span>
     </div>
 
