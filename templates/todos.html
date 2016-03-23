@@ -9,7 +9,8 @@
           <span class='valign item-text'>
             <label ng-click="editing = true" ng-hide="editing" ng-class="{'completed': todo.completed}">
               {{todo.name}}</label>
-            <input ng-blur="editing = false;" ng-enter='$event.target.blur()' ng-show="editing" ng-model="todo.name" class="editing-label" type="text"/>
+            <input ng-blur="editing = false;" ng-enter='$event.target.blur()'
+            ng-show="editing" ng-model="todo.name" class="editing-label" type="text"/>
           </span>
       <button class='btn btn-danger btn-xs' type='button' ng-show='mouseover' ng-click="deleteTodo(todo, $index)">delete</button>
       </span>
