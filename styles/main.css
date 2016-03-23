@@ -18,3 +18,11 @@ todos {
 .float-right {
   float: right;
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.item-text {
+  margin-left: 0.5em;
+}
