@@ -8,7 +8,7 @@
       <span class='valign item-text'>
         <label ng-click="launchPromptDialog(todo)" ng-class="{'completed': todo.completed}">{{todo.name}}</label>
       </span>
-      <button class='valign btn btn-danger btn-xs' type='button' ng-show='mouseover' ng-click="deleteTodo(todo, $index)">delete</button>
+      <button class='float-right valign btn btn-danger btn-xs' type='button' ng-show='mouseover' ng-click="deleteTodo(todo, $index)">delete</button>
     </p>
   </div>
   <p class='text-center'>

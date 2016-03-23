@@ -15,6 +15,6 @@ todos {
   vertical-align: top;
 }
 
-.item-text > label {
-  width: 8em;
+.float-right {
+  float: right;
 }
