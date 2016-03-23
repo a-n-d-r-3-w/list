@@ -2,9 +2,10 @@
 
 angular.module('todoListApp')
 .controller('mainCtrl', function($scope, dataService) {
-  $scope.addTodo = function() {
+  $scope.addTodo = function(index) {
     var todo = {name: "This is a new todo."};
-    $scope.todos.unshift(todo);
+    index = index || $scope.todos.length;
+    $scope.todos.splice(index, 0, todo);
   };
   
   $scope.helloWorld = dataService.helloWorld;
