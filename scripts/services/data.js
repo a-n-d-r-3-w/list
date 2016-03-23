@@ -2,9 +2,6 @@
 
 angular.module('todoListApp')
 .service('dataService', function($http) {
-  this.helloWorld = function() {
-    console.log("This is the data service's method!!");
-  };
 
   this.getTodos = function(callback){
     $http.get('mock/todos.json')
