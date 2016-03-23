@@ -1,23 +1,21 @@
-  <div class="list">
-
-    <div class="item" ng-class="{'editing-item': editing}"
-      ng-repeat="todo in todos" ng-init="todo.completed = false">
-
-      <p class='text-center'><button class='btn btn-default btn-xs' type='button' ng-click="addTodo($index)">+</button></p>
-
-      <p class='bg-info item2'>
-        <input class='valign' ng-model="todo.completed" type="checkbox"/>
-        <span ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
+<div class="list">
+  <div class="item" ng-class="{'editing-item': editing}" ng-repeat="todo in todos" ng-init="todo.completed = false">
+    <p class='text-center'>
+      <button class='btn btn-default btn-xs' type='button' ng-click="addTodo($index)">+</button>
+    </p>
+    <p class='bg-info item2'>
+      <input class='valign' ng-model="todo.completed" type="checkbox" />
+      <span ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
           <span class='valign item-text'>
             <label ng-click="editing = true" ng-hide="editing" ng-class="{'completed': todo.completed}">
               {{todo.name}}</label>
             <input ng-blur="editing = false;" ng-enter='$event.target.blur()' ng-show="editing" ng-model="todo.name" class="editing-label" type="text"/>
           </span>
-          <button class='btn btn-danger btn-xs' type='button' ng-show='mouseover' ng-click="deleteTodo(todo, $index)">delete</button>
-        </span>
-      </p>
-    </div>
-
-    <p class='text-center'><button class='btn btn-default btn-xs' type='button' ng-click="addTodo()">+</button></p>
-
+      <button class='btn btn-danger btn-xs' type='button' ng-show='mouseover' ng-click="deleteTodo(todo, $index)">delete</button>
+      </span>
+    </p>
   </div>
+  <p class='text-center'>
+    <button class='btn btn-default btn-xs' type='button' ng-click="addTodo()">+</button>
+  </p>
+</div>
