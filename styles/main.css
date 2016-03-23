@@ -3,6 +3,10 @@
   text-decoration: line-through;
 }
 
+todos {
+  margin-top: 3em;
+}
+
 /*body {
   color: #2d3339;
   font-family: "Varela Round";
