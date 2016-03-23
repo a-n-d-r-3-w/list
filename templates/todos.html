@@ -8,7 +8,7 @@
       <p class='bg-info item2'>
         <input class='valign' ng-model="todo.completed" type="checkbox"/>
         <span ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
-          <span class='item-text'>
+          <span class='valign item-text'>
             <label ng-click="editing = true" ng-hide="editing" ng-class="{'completed': todo.completed}">
               {{todo.name}}</label>
             <input ng-blur="editing = false;" ng-enter='$event.target.blur()' ng-show="editing" ng-model="todo.name" class="editing-label" type="text"/>
