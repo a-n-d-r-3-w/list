@@ -1,3 +1,8 @@
+.completed {
+    color: #a7b9c4;
+    text-decoration: line-through;
+  }
+
 /*body {
   color: #2d3339;
   font-family: "Varela Round";

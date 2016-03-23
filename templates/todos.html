@@ -6,8 +6,6 @@
       <div><button type='button' ng-click="addTodo($index)">+</button></div>
 
       <input ng-model="todo.completed" type="checkbox"/>
-      <span ng-click="todo.completed = !todo.completed; todo.edited = true"></span>
-        
       <span ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
         <label ng-click="editing = true" ng-hide="editing" ng-click="helloWorld()">
           {{todo.name}}</label>
