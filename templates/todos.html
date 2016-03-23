@@ -1,7 +1,7 @@
   <div class="list">
 
     <div class="item" ng-class="{'editing-item': editing, 'edited': todo.edited, 'completed': todo.completed}"
-      ng-repeat="todo in todos | orderBy: 'completed'" ng-init="todo.completed = false">
+      ng-repeat="todo in todos" ng-init="todo.completed = false">
 
       <div><button type='button' ng-click="addTodo($index)">+</button></div>
 
