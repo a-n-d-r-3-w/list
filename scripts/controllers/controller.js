@@ -2,7 +2,6 @@
   'use strict';
 
   var existingModule = angular.module('angularModule');
-
   existingModule.controller('controller', function($scope, service) {
     $scope.addTodo = function(index) {
       var todo = {
