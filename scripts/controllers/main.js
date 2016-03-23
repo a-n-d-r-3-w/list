@@ -3,7 +3,7 @@
 angular.module('todoListApp')
 .controller('mainCtrl', function($scope, dataService) {
   $scope.addTodo = function(index) {
-    var todo = {name: "This is a new todo."};
+    var todo = {name: 'New item'};
     index = (typeof index == 'number') ? index : $scope.todos.length;
     $scope.todos.splice(index, 0, todo);
   };
