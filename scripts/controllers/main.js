@@ -21,11 +21,11 @@ angular.module('todoListApp')
   };
   
   $scope.saveTodos = function() {
-    var filteredTodos = $scope.todos.filter(function(todo) {
-      if(todo.edited) {
-        return todo;
-      };
-    });
-    dataService.saveTodos(filteredTodos);
+    // var filteredTodos = $scope.todos.filter(function(todo) {
+    //   if(todo.edited) {
+    //     return todo;
+    //   };
+    // });
+    // dataService.saveTodos(filteredTodos);
   };
 })

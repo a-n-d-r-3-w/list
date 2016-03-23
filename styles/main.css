@@ -7,6 +7,18 @@ todos {
   margin-top: 3em;
 }
 
+.item2 {
+  padding: 0.75em 1em;
+}
+
+.valign {
+    vertical-align: top;
+}
+
+.item-text > label {
+  width: 8em;
+}
+
 /*body {
   color: #2d3339;
   font-family: "Varela Round";
