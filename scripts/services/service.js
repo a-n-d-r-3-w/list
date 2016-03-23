@@ -1,11 +1,10 @@
 'use strict';
 
 var existingModule = angular.module('angularModule');
-existingModule.service('service', function($http) {
 
+existingModule.service('service', function($http) {
   this.getTodos = function(callback) {
-    $http.get('mock/todos.json')
-      .then(callback)
+    $http.get('mock/todos.json').then(callback);
   };
 
   this.deleteTodo = function(todo) {

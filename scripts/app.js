@@ -1,1 +1,3 @@
-angular.module("angularModule", []); // Create module.
+'use strict';
+
+angular.module('angularModule', []); // Create module.
