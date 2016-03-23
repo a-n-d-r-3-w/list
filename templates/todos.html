@@ -5,15 +5,16 @@
 
       <div><button type='button' ng-click="addTodo($index)">+</button></div>
 
-
       <input ng-model="todo.completed" type="checkbox"/>
       <span ng-click="todo.completed = !todo.completed; todo.edited = true"></span>
-      <label ng-click="editing = true" ng-hide="editing" ng-click="helloWorld()"
-      ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
-        {{todo.name}}</label>
-      <input ng-change="todo.edited = true" ng-blur="editing = false;" ng-show="editing" ng-model="todo.name" class="editing-label" type="text"/>
+        
+      <span ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
+        <label ng-click="editing = true" ng-hide="editing" ng-click="helloWorld()">
+          {{todo.name}}</label>
+        <input ng-change="todo.edited = true" ng-blur="editing = false;" ng-show="editing" ng-model="todo.name" class="editing-label" type="text"/>
 
-      <button type='button' ng-show='mouseover' ng-click="deleteTodo(todo, $index)">delete</button>
+        <button type='button' ng-show='mouseover' ng-click="deleteTodo(todo, $index)">delete</button>
+      </span>
     </div>
 
     <div><button type='button' ng-click="addTodo()">+</button></div>
