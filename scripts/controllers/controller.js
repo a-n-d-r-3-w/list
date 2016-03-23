@@ -3,6 +3,17 @@
 
   var existingModule = angular.module('angularModule');
   existingModule.controller('controller', function($scope, service) {
+
+    $scope.launchPromptDialog = function(todo) {
+      bootbox.prompt({
+        title: "Edit item",
+        value: todo.name,
+        callback: function(result) {
+          if (result === null) {} else {}
+        }
+      });
+    };
+
     $scope.addTodo = function(index) {
       var todo = {
         name: 'New item'
