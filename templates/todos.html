@@ -5,8 +5,8 @@
     </div>
     <p class='bg-info item2' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
       <button class='float-right valign btn btn-danger btn-xs' type='button' ng-class='{hidden: !mouseover}' ng-click="deleteTodo(todo, $index)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-      <input class='valign' ng-model="todo.completed" type="checkbox" id='checkbox1' />
-      <label class='item-text' for='checkbox1' ng-class="{'completed': todo.completed}">{{todo.name}}</label>
+      <input class='valign' ng-model="todo.completed" type="checkbox" id='checkbox{{$index}}' />
+      <label class='item-text' for='checkbox{{$index}}' ng-class="{'completed': todo.completed}">{{todo.name}}</label>
     </p>
   </div>
   <div class='text-center'>
