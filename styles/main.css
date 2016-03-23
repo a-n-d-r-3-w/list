@@ -8,7 +8,8 @@ todos {
 }
 
 .item2 {
-  padding: 0.75em 1em;
+  padding: 0.5em 0.5em;
+  margin: 0.5em;
 }
 
 .valign {
@@ -25,4 +26,16 @@ todos {
 
 .item-text {
   margin-left: 0.5em;
+}
+
+.glyphicon-plus-sign {
+  color: green;
+}
+
+.add-button-placeholder {
+  height: 1em;
+}
+
+.add-button-placeholder:hover {
+  height: 2em;
 }
