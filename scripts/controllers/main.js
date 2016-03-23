@@ -4,12 +4,12 @@ angular.module('todoListApp')
 .controller('mainCtrl', function($scope, dataService) {
   $scope.addTodo = function(index) {
     var todo = {name: "This is a new todo."};
-    index = index || $scope.todos.length;
+    index = (typeof index == 'number') ? index : $scope.todos.length;
     $scope.todos.splice(index, 0, todo);
   };
-  
+
   $scope.helloWorld = dataService.helloWorld;
-  
+
   dataService.getTodos(function(response) { 
       console.log(response.data);  
       $scope.todos = response.data;
