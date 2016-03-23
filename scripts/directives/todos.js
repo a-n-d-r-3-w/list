@@ -1,7 +1,7 @@
-angular.module('todoListApp')
+angular.module('angularModule')
 .directive('todos', function() {
   return {
     templateUrl: 'templates/todos.html',
-    controller: 'mainCtrl'
+    controller: 'controller'
   }
 })

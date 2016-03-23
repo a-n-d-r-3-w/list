@@ -1,16 +1,16 @@
 'use strict';
 
-angular.module('todoListApp')
-.service('dataService', function($http) {
+var existingModule = angular.module('angularModule');
+existingModule.service('service', function($http) {
 
-  this.getTodos = function(callback){
+  this.getTodos = function(callback) {
     $http.get('mock/todos.json')
-    .then(callback)
+      .then(callback)
   };
 
   this.deleteTodo = function(todo) {
     console.log("The " + todo.name + " todo has been deleted!")
-    // other logic
+      // other logic
   };
 
   this.saveTodos = function(todos) {

@@ -1,1 +1,1 @@
-angular.module("todoListApp", []);
+angular.module("angularModule", []); // Create module.
