@@ -1,20 +1,20 @@
-'use strict';
+(function() {
+  'use strict';
 
-var existingModule = angular.module('angularModule');
+  var existingModule = angular.module('angularModule');
 
-existingModule.service('service', function($http) {
-  this.getTodos = function(callback) {
-    $http.get('mock/todos.json').then(callback);
-  };
+  existingModule.service('service', function($http) {
+    this.getTodos = function(callback) {
+      $http.get('mock/todos.json').then(callback);
+    };
 
-  this.deleteTodo = function(todo) {
-    console.log("The " + todo.name + " todo has been deleted!")
-      // other logic
-  };
+    this.deleteTodo = function(todo) {
+      console.log("The " + todo.name + " todo has been deleted!");
+    };
 
-  this.saveTodos = function(todos) {
-    console.log(todos.length + " todos have been saved!");
-    // other logic...
-  };
+    this.saveTodos = function(todos) {
+      console.log(todos.length + " todos have been saved!");
+    };
 
-});
+  });
+}());

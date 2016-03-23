@@ -1,3 +1,4 @@
-'use strict';
-
-angular.module('angularModule', []); // Create module.
+(function() {
+  'use strict';
+  angular.module('angularModule', []); // Create module.
+}());
