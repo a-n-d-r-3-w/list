@@ -35,6 +35,7 @@
 
 .item-label {
   margin-left: 0.5em;
+  width: 18em;
 }
 
 todos {
@@ -44,11 +45,16 @@ todos {
 .item-container {
   padding: 0.5em 0.5em;
   position: relative;
-  height: 2.5em;
+  /*height: 2.5em;*/
+  height: auto;
 }
 
 .valign {
   vertical-align: top;
+}
+
+.vmiddle {
+  vertical-align: middle;
 }
 
 .float-right {
