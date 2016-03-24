@@ -1,10 +1,7 @@
 <div class="list">
   <div ng-repeat="todo in todos" ng-init="todo.completed = false">
-    <!-- <div class='text-center'>
-      <button class='btn btn-default btn-xs' type='button' ng-click="addTodo($index)">+</button>
-    </div> -->
-    <div class='text-center addAreaContainer small' ng-mouseenter='addAreaContainer.mouseover = true' ng-mouseleave='addAreaContainer.mouseover = false'>
-      <div class='addArea' ng-class='{visible: addAreaContainer.mouseover}' ng-click="addTodo($index)">Add item here</div>
+    <div class='text-center addAreaContainer small' ng-mouseenter='addAreaContainer$index.mouseover = true' ng-mouseleave='addAreaContainer$index.mouseover = false'>
+      <div class='addArea' ng-class='{visible: addAreaContainer$index.mouseover}' ng-click="addTodo($index)">Add item here</div>
     </div>
     <div class='bg-info item2' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
       <button class='innerButton float-right valign btn btn-danger btn-xs' type='button' ng-class='{hidden: !mouseover}' ng-click="deleteTodo(todo, $index)">Delete</button>
@@ -14,7 +11,7 @@
       <label class='item-text' ng-class="{'completed': todo.completed}">{{todo.name}}</label>
     </div>
   </div>
-  <div class='text-center'>
-    <button class='btn btn-default btn-xs' type='button' ng-click="addTodo($index)">+</button>
+  <div class='text-center addAreaContainer small' ng-mouseenter='addAreaContainer.mouseover = true' ng-mouseleave='addAreaContainer.mouseover = false'>
+    <div class='addArea' ng-class='{visible: addAreaContainer.mouseover}' ng-click="addTodo($index)">Add item here</div>
   </div>
 </div>
