@@ -2,13 +2,13 @@
   'use strict';
 
   var existingModule = angular.module('angularModule');
-  existingModule.controller('controller', function($scope, service) {
+  existingModule.controller('controller', function($scope, $timeout, service) {
 
     $scope.focusEditor = function(index) {
       var editor = document.getElementById('editor' + index);
-      setTimeout(function() {
+      $timeout(function() {
         editor.focus();
-      }, 1000);
+      });
     };
 
     $scope.handleKeyDown = function(event, index) {
