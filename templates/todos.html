@@ -4,12 +4,14 @@
       <span class='addArea' ng-class='{visible: addAreaContainer$index.mouseover}' ng-click="addTodo($index)">Add item here</span>
     </div>
     <div class='bg-info item2' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
-      <button class='dangerButton float-right valign btn btn-danger btn-xs' type='button' ng-show='mouseover' ng-click="deleteTodo(todo, $index)">Delete</button>
-      <button class='safeButton float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover' ng-click="moveMode = true" ng-class='{"text-muted": moveMode}'>Move</button>
-      <!-- <button class='safeButton float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover'>Edit</button> -->
-      <button class='safeButton float-right valign btn btn-success btn-xs' type='button' ng-show='mouseover && !todo.completed' ng-click='todo.completed = true'>Done</button>
-      <button class='safeButton float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover && todo.completed' ng-click='todo.completed = false'>Undone</button>
-      <label class='item-label' ng-class="{'text-muted': todo.completed, 'line-through': todo.completed}">{{todo.name}}</label>
+      <button class='dangerButton float-right valign btn btn-danger btn-xs' type='button' ng-show='mouseover && !editing' ng-click="deleteTodo(todo, $index)">Delete</button>
+      <!-- <button class='safeButton float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover'>Move</button> -->
+      <button class='safeButton float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover && !editing' ng-click='editing = true'>Edit</button>
+      <button class='safeButton float-right valign btn btn-success btn-xs' type='button' ng-show='mouseover && !todo.completed && !editing' ng-click='todo.completed = true'>Done</button>
+      <button class='safeButton float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover && todo.completed && !editing' ng-click='todo.completed = false'>Undone</button>
+      <label ng-hide='editing' class='item-label' ng-class="{'text-muted': todo.completed, 'line-through': todo.completed}">{{todo.name}}</label>
+      <input class='item-editor' ng-show='editing' ng-type='text' value='{{todo.name}}' />
+      <!-- <div class='overlay' ng-show='moveMode'></div> -->
     </div>
   </div>
   <div class='text-center addAreaContainer small' ng-mouseenter='addAreaContainerAtBottom.mouseover = true' ng-mouseleave='addAreaContainerAtBottom.mouseover = false'>
