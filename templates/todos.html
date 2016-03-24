@@ -1,17 +1,21 @@
 <div class="list">
   <div ng-repeat="todo in todos" ng-init="todo.completed = false">
     <div class='text-center addAreaContainer small' ng-mouseenter='addAreaContainer$index.mouseover = true' ng-mouseleave='addAreaContainer$index.mouseover = false'>
-      <div class='addArea' ng-class='{visible: addAreaContainer$index.mouseover}' ng-click="addTodo($index)">Add item here</div>
+      <span class='addArea' ng-class='{visible: addAreaContainer$index.mouseover}' ng-click="addTodo($index)">Add item here</span>
+      <!-- <button class='addArea valign btn btn-default btn-xs' ng-class='{visible: addAreaContainer$index.mouseover}' type='button'>+</button> -->
     </div>
     <div class='bg-info item2' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
-      <button class='innerButton float-right valign btn btn-danger btn-xs' type='button' ng-class='{hidden: !mouseover}' ng-click="deleteTodo(todo, $index)">Delete</button>
-      <button class='innerButton float-right valign btn btn-default btn-xs' type='button' ng-class='{hidden: !mouseover}'>Move</button>
-      <span ng-hide='todo.completed' ng-click='todo.completed = true' class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
-      <span ng-show='todo.completed' ng-click='todo.completed = false' class="glyphicon glyphicon-check text-muted" aria-hidden="true"></span>
-      <label class='item-text' ng-class="{'text-muted': todo.completed, 'line-through': todo.completed}">{{todo.name}}</label>
+      <button class='dangerButton float-right valign btn btn-danger btn-xs' type='button' ng-show='mouseover' ng-click="deleteTodo(todo, $index)">Delete</button>
+      <button class='safeButton float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover'>Move</button>
+      <button class='safeButton float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover'>Edit</button>
+      <button class='safeButton float-right valign btn btn-success btn-xs' type='button' ng-show='mouseover && !todo.completed' ng-click='todo.completed = true'>Done</button>
+      <button class='safeButton float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover && todo.completed' ng-click='todo.completed = false'>Undone</button>
+      <!-- <span ng-hide='todo.completed' ng-click='todo.completed = true' class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
+<span ng-show='todo.completed' ng-click='todo.completed = false' class="glyphicon glyphicon-check text-muted" aria-hidden="true"></span> -->
+      <label ng-class="{'text-muted': todo.completed, 'line-through': todo.completed}">{{todo.name}}</label>
     </div>
   </div>
   <div class='text-center addAreaContainer small' ng-mouseenter='addAreaContainerAtBottom.mouseover = true' ng-mouseleave='addAreaContainerAtBottom.mouseover = false'>
-    <div class='addArea' ng-class='{visible: addAreaContainerAtBottom.mouseover}' ng-click="addTodo($index)">Add item here</div>
+    <label class='addArea' ng-class='{visible: addAreaContainerAtBottom.mouseover}' ng-click="addTodo($index)">Add item here</label>
   </div>
 </div>

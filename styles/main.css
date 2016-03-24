@@ -10,8 +10,12 @@
   visibility: visible;
 }
 
-.innerButton {
+.safeButton {
   margin-left: 0.5em;
+}
+
+.dangerButton {
+  margin-left: 2em;
 }
 
 todos {
