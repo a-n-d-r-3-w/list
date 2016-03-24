@@ -3,13 +3,24 @@
   text-decoration: line-through;
 }
 
+.addArea {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.innerButton {
+  margin-left: 0.5em;
+}
+
 todos {
   margin-top: 3em;
 }
 
 .item2 {
   padding: 0.5em 0.5em;
-  margin: 0.5em;
 }
 
 .valign {
