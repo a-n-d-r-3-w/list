@@ -15,9 +15,12 @@
 .line-through {
   text-decoration: line-through;
 }
+
 .addArea {
   visibility: hidden;
+  outline: none;
 }
+
 .visible {
   visibility: visible;
 }
@@ -41,6 +44,7 @@ todos {
 .item2 {
   padding: 0.5em 0.5em;
   position: relative;
+  height: 2.5em;
 }
 
 .valign {
