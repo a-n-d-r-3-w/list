@@ -6,11 +6,9 @@
     <div class='bg-info item2' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
       <button class='innerButton float-right valign btn btn-danger btn-xs' type='button' ng-class='{hidden: !mouseover}' ng-click="deleteTodo(todo, $index)">Delete</button>
       <button class='innerButton float-right valign btn btn-default btn-xs' type='button' ng-class='{hidden: !mouseover}'>Move</button>
-      <!-- <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"></button> -->
-      <span ng-hide='checked' ng-click='checked = true' class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
-      <span ng-show='checked' ng-click='checked = false' class="glyphicon glyphicon-check" aria-hidden="true"></span>
-      <!-- <input class='valign' ng-model="todo.completed" type="checkbox" /> -->
-      <label class='item-text' ng-class="{'completed': todo.completed}">{{todo.name}}</label>
+      <span ng-hide='todo.completed' ng-click='todo.completed = true' class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
+      <span ng-show='todo.completed' ng-click='todo.completed = false' class="glyphicon glyphicon-check text-muted" aria-hidden="true"></span>
+      <label class='item-text' ng-class="{'text-muted': todo.completed, 'line-through': todo.completed}">{{todo.name}}</label>
     </div>
   </div>
   <div class='text-center addAreaContainer small' ng-mouseenter='addAreaContainerAtBottom.mouseover = true' ng-mouseleave='addAreaContainerAtBottom.mouseover = false'>
