@@ -4,15 +4,16 @@
       <span ng-class='{visible: addAreaContainer.mouseover}' ng-click="addTodo($index)" class="addArea glyphicon glyphicon-plus" aria-hidden="true"></span>
     </div>
     <div class='text-center'>
-      <span ng-show='moveMode' class="glyphicon glyphicon-record" aria-hidden="true"></span>
+      <span class="glyphicon glyphicon-record" aria-hidden="true"></span>
     </div>
     <div class='bg-info item2' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
       <button class='dangerous-button float-right valign btn btn-danger btn-xs' type='button' ng-show='mouseover && !todo.editing' ng-click="deleteTodo(todo, $index)">Delete</button>
+      <button class='safe-button float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover && !todo.editing' ng-click='showTargets($index)'>Move</button>
       <button class='safe-button float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover && !todo.editing' ng-click='todo.editing = true'>Edit</button>
       <button class='safe-button float-right valign btn btn-success btn-xs' type='button' ng-show='mouseover && !todo.completed && !todo.editing' ng-click='todo.completed = true'>Done</button>
       <button class='safe-button float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover && todo.completed && !todo.editing' ng-click='todo.completed = false'>Undone</button>
       <label ng-hide='todo.editing' class='item-label' ng-class="{'text-muted': todo.completed, 'line-through': todo.completed}">{{todo.name}}</label>
-      <input focus-if='todo.editing' id='editor{{$index}}' ng-blur='todo.editing = false' ng-keydown='handleKeyDown($event, $index)' class='item-editor small' ng-show='todo.editing' ng-type='text' value='{{todo.name}}' />
+      <input focus-if='todo.editing' ng-blur='todo.editing = false' ng-keydown='handleKeyDown($event, $index)' class='item-editor small' ng-show='todo.editing' ng-type='text' value='{{todo.name}}' />
     </div>
   </div>
   <div class='text-center addAreaContainer' ng-mouseenter='addAreaContainerLast.mouseover = true' ng-mouseleave='addAreaContainerLast.mouseover = false'>
