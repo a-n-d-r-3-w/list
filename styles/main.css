@@ -15,25 +15,23 @@
 .line-through {
   text-decoration: line-through;
 }
-
 .addArea {
   visibility: hidden;
 }
-
 .visible {
   visibility: visible;
 }
 
-.safeButton {
+.safe-button {
   margin-left: 0.5em;
+}
+
+.dangerous-button {
+  margin-left: 2em;
 }
 
 .item-label {
   margin-left: 0.5em;
-}
-
-.dangerButton {
-  margin-left: 2em;
 }
 
 todos {
@@ -51,20 +49,4 @@ todos {
 
 .float-right {
   float: right;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-.glyphicon-plus-sign {
-  color: green;
-}
-
-.add-button-placeholder {
-  height: 1em;
-}
-
-.add-button-placeholder:hover {
-  height: 2em;
 }
