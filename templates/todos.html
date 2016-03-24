@@ -5,7 +5,6 @@
     <div ng-hide='moving' class='text-center' ng-mouseenter='addAreaContainer.mouseover = true' ng-mouseleave='addAreaContainer.mouseover = false'>
       <span ng-class='{visible: addAreaContainer.mouseover}' ng-click="addTodo($index)" class="addArea glyphicon glyphicon-plus" aria-hidden="true"></span>
     </div>
-
     <div class='text-center target'>
       <span ng-show='moving' class="glyphicon glyphicon-record" aria-hidden="true"></span>
     </div>
@@ -27,6 +26,9 @@
 
   <div ng-hide='moving' class='text-center' ng-mouseenter='addAreaContainer.mouseover = true' ng-mouseleave='addAreaContainer.mouseover = false'>
     <span ng-class='{visible: addAreaContainer.mouseover}' ng-click="addTodo($index)" class="addArea glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </div>
+  <div class='text-center target'>
+    <span ng-show='moving' class="glyphicon glyphicon-record" aria-hidden="true"></span>
   </div>
 
 </div>
