@@ -12,7 +12,7 @@
       <input ng-keydown='handleKeyDown($event, $index)' class='item-editor' ng-show='todo.editing' ng-type='text' value='{{todo.name}}' />
     </div>
   </div>
-  <div class='text-center addAreaContainer small' ng-mouseenter='addAreaContainer$index.mouseover = true' ng-mouseleave='addAreaContainer$index.mouseover = false'>
-    <span class='addArea' ng-class='{visible: addAreaContainer$index.mouseover}' ng-click="addTodo($index)">Add item here</span>
+  <div class='text-center addAreaContainer small' ng-mouseenter='addAreaContainerLast.mouseover = true' ng-mouseleave='addAreaContainerLast.mouseover = false'>
+    <span class='addArea' ng-class='{visible: addAreaContainerLast.mouseover}' ng-click="addTodo($index)">Add item here</span>
   </div>
 </div>

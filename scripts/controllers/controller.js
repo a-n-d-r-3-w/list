@@ -24,6 +24,7 @@
       };
       index = (typeof index == 'number') ? index : $scope.todos.length;
       $scope.todos.splice(index, 0, todo);
+      todo.editing = true;
     };
 
     $scope.helloWorld = service.helloWorld;
