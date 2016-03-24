@@ -4,6 +4,11 @@
   var existingModule = angular.module('angularModule');
   existingModule.controller('controller', function($scope, service) {
 
+    $scope.focusEditor = function(index) {
+      var editor = document.getElementById('editor' + index);
+      editor.focus();
+    };
+
     $scope.handleKeyDown = function(event, index) {
       var keyCode = event.keyCode;
       var todo = $scope.todos[index];
