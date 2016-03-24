@@ -7,10 +7,9 @@
     $scope.moveTo = function(targetIndex) {
       var sourceIndex = $scope.sourceIndex;
       var todo = $scope.todos[$scope.sourceIndex];
-      // var todo = $scope.todos.splice($scope.sourceIndex, 1);
-      console.log(todo.name);
       $scope.todos.splice(sourceIndex, 1);
       $scope.todos.splice(Math.max(0, targetIndex - 1), 0, todo);
+      $scope.moving = false;
     };
 
     $scope.showTargets = function(sourceIndex) {
