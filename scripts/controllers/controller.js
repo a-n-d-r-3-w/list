@@ -4,8 +4,17 @@
   var existingModule = angular.module('angularModule');
   existingModule.controller('controller', function($scope, $timeout, service) {
 
-    $scope.showTargets = function(index) {
-      // Show all targets EXCEPT the ones immediately before and after this index
+    $scope.moveTo = function(targetIndex) {
+      var sourceIndex = $scope.sourceIndex;
+      var todo = $scope.todos[$scope.sourceIndex];
+      // var todo = $scope.todos.splice($scope.sourceIndex, 1);
+      console.log(todo.name);
+      $scope.todos.splice(sourceIndex, 1);
+      $scope.todos.splice(Math.max(0, targetIndex - 1), 0, todo);
+    };
+
+    $scope.showTargets = function(sourceIndex) {
+      $scope.sourceIndex = sourceIndex;
       $scope.moving = true;
     };
 
