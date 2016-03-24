@@ -11,7 +11,7 @@
       <label class='item-text' ng-class="{'completed': todo.completed}">{{todo.name}}</label>
     </div>
   </div>
-  <div class='text-center addAreaContainer small' ng-mouseenter='addAreaContainer.mouseover = true' ng-mouseleave='addAreaContainer.mouseover = false'>
-    <div class='addArea' ng-class='{visible: addAreaContainer.mouseover}' ng-click="addTodo($index)">Add item here</div>
+  <div class='text-center addAreaContainer small' ng-mouseenter='addAreaContainerAtBottom.mouseover = true' ng-mouseleave='addAreaContainerAtBottom.mouseover = false'>
+    <div class='addArea' ng-class='{visible: addAreaContainerAtBottom.mouseover}' ng-click="addTodo($index)">Add item here</div>
   </div>
 </div>
