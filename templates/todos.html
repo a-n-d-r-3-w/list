@@ -6,7 +6,7 @@
     <div class='text-center'>
       <span class="glyphicon glyphicon-record" aria-hidden="true"></span>
     </div>
-    <div class='bg-info item2' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
+    <div class='bg-info item-container' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
       <button class='dangerous-button float-right valign btn btn-danger btn-xs' type='button' ng-show='mouseover && !todo.editing' ng-click="deleteTodo(todo, $index)">Delete</button>
       <button class='safe-button float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover && !todo.editing' ng-click='showTargets($index)'>Move</button>
       <button class='safe-button float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover && !todo.editing' ng-click='todo.editing = true'>Edit</button>

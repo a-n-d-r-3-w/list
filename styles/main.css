@@ -41,7 +41,7 @@ todos {
   margin-top: 3em;
 }
 
-.item2 {
+.item-container {
   padding: 0.5em 0.5em;
   position: relative;
   height: 2.5em;
