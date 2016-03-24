@@ -35,10 +35,6 @@ todos {
   visibility: hidden;
 }
 
-.item-text {
-  margin-left: 0.5em;
-}
-
 .glyphicon-plus-sign {
   color: green;
 }
