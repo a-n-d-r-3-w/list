@@ -5,6 +5,7 @@
   existingModule.controller('controller', function($scope, $timeout, service) {
 
     $scope.moveTo = function(targetIndex) {
+      targetIndex = (typeof targetIndex == 'number') ? targetIndex : $scope.todos.length;
       var sourceIndex = $scope.sourceIndex;
       var todo = $scope.todos[$scope.sourceIndex];
       $scope.todos.splice(sourceIndex, 1);
