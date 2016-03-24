@@ -2,12 +2,12 @@
 
   <div ng-repeat="todo in todos" ng-init="todo.completed = false">
 
-    <div class='text-center' ng-mouseenter='addAreaContainer.mouseover = true' ng-mouseleave='addAreaContainer.mouseover = false'>
+    <div ng-hide='moving' class='text-center' ng-mouseenter='addAreaContainer.mouseover = true' ng-mouseleave='addAreaContainer.mouseover = false'>
       <span ng-class='{visible: addAreaContainer.mouseover}' ng-click="addTodo($index)" class="addArea glyphicon glyphicon-plus" aria-hidden="true"></span>
     </div>
 
     <div class='text-center target'>
-      <span class="glyphicon glyphicon-record" aria-hidden="true"></span>
+      <span ng-show='moving' class="glyphicon glyphicon-record" aria-hidden="true"></span>
     </div>
 
     <div class='bg-info item-container' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
@@ -25,8 +25,8 @@
     </div>
   </div>
 
-  <div class='text-center addAreaContainer' ng-mouseenter='addAreaContainerLast.mouseover = true' ng-mouseleave='addAreaContainerLast.mouseover = false'>
-    <span class='addArea' ng-class='{visible: addAreaContainerLast.mouseover}' ng-click="addTodo($index)">Add item here</span>
+  <div ng-hide='moving' class='text-center' ng-mouseenter='addAreaContainer.mouseover = true' ng-mouseleave='addAreaContainer.mouseover = false'>
+    <span ng-class='{visible: addAreaContainer.mouseover}' ng-click="addTodo($index)" class="addArea glyphicon glyphicon-plus" aria-hidden="true"></span>
   </div>
 
 </div>

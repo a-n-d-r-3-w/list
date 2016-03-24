@@ -6,7 +6,7 @@
 
     $scope.showTargets = function(index) {
       // Show all targets EXCEPT the ones immediately before and after this index
-
+      $scope.moving = true;
     };
 
     $scope.handleKeyDown = function(event, index) {
