@@ -6,7 +6,9 @@
 
     $scope.focusEditor = function(index) {
       var editor = document.getElementById('editor' + index);
-      editor.focus();
+      setTimeout(function() {
+        editor.focus();
+      }, 1000);
     };
 
     $scope.handleKeyDown = function(event, index) {
@@ -31,8 +33,6 @@
       $scope.todos.splice(index, 0, todo);
       todo.editing = true;
     };
-
-    $scope.helloWorld = service.helloWorld;
 
     service.getTodos(function(response) {
       $scope.todos = response.data;
