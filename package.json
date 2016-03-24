@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "mongoose": "^4.4.9",
     "ng-focus-if": "^1.0.5"
   }
 }
