@@ -5,7 +5,7 @@
     </div>
     <div class='bg-info item2' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
       <button class='dangerButton float-right valign btn btn-danger btn-xs' type='button' ng-show='mouseover' ng-click="deleteTodo(todo, $index)">Delete</button>
-      <button class='safeButton float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover'>Move</button>
+      <button class='safeButton float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover' ng-click="moveMode = true" ng-class='{"text-muted": moveMode}'>Move</button>
       <!-- <button class='safeButton float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover'>Edit</button> -->
       <button class='safeButton float-right valign btn btn-success btn-xs' type='button' ng-show='mouseover && !todo.completed' ng-click='todo.completed = true'>Done</button>
       <button class='safeButton float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover && todo.completed' ng-click='todo.completed = false'>Undone</button>
