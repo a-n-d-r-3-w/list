@@ -8,7 +8,10 @@
       var sourceIndex = $scope.sourceIndex;
       var todo = $scope.todos[$scope.sourceIndex];
       $scope.todos.splice(sourceIndex, 1);
-      $scope.todos.splice(Math.max(0, targetIndex - 1), 0, todo);
+      if (targetIndex > sourceIndex) {
+        targetIndex -= 1;
+      }
+      $scope.todos.splice(targetIndex, 0, todo);
       $scope.moving = false;
     };
 
