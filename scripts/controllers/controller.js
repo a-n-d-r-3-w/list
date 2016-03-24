@@ -4,14 +4,18 @@
   var existingModule = angular.module('angularModule');
   existingModule.controller('controller', function($scope, service) {
 
-    $scope.launchPromptDialog = function(todo) {
-      bootbox.prompt({
-        title: "Edit item",
-        value: todo.name,
-        callback: function(result) {
-          if (result === null) {} else {}
-        }
-      });
+    $scope.handleKeyDown = function(event, index) {
+      var keyCode = event.keyCode;
+      var todo = $scope.todos[index];
+      if (keyCode === 13) {
+        todo.name = event.target.value;
+        todo.editing = false;
+        return;
+      }
+      if (keyCode === 27) {
+        todo.editing = false;
+        return;
+      }
     };
 
     $scope.addTodo = function(index) {
