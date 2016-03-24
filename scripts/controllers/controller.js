@@ -4,13 +4,6 @@
   var existingModule = angular.module('angularModule');
   existingModule.controller('controller', function($scope, $timeout, service) {
 
-    $scope.focusEditor = function(index) {
-      var editor = document.getElementById('editor' + index);
-      $timeout(function() {
-        editor.focus();
-      });
-    };
-
     $scope.handleKeyDown = function(event, index) {
       var keyCode = event.keyCode;
       var todo = $scope.todos[index];
@@ -27,7 +20,7 @@
 
     $scope.addTodo = function(index) {
       var todo = {
-        name: 'New item'
+        name: ''
       };
       index = (typeof index == 'number') ? index : $scope.todos.length;
       $scope.todos.splice(index, 0, todo);

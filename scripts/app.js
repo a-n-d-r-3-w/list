@@ -1,4 +1,4 @@
 (function() {
   'use strict';
-  angular.module('angularModule', []); // Create module.
+  angular.module('angularModule', ['focus-if']); // Create module.
 }());
