@@ -1,7 +1,8 @@
 {
   "html": {
     "indent_char": " ",
-    "indent_size": 2
+    "indent_size": 2,
+    "max_preserve_newlines": 3
   },
   "css": {
     "indent_char": " ",

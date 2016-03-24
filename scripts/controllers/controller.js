@@ -4,6 +4,11 @@
   var existingModule = angular.module('angularModule');
   existingModule.controller('controller', function($scope, $timeout, service) {
 
+    $scope.showTargets = function(index) {
+      // Show all targets EXCEPT the ones immediately before and after this index
+
+    };
+
     $scope.handleKeyDown = function(event, index) {
       var keyCode = event.keyCode;
       var todo = $scope.todos[index];
