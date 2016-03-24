@@ -12,7 +12,7 @@
       <button class='safeButton float-right valign btn btn-default btn-xs' type='button' ng-show='mouseover && todo.completed' ng-click='todo.completed = false'>Undone</button>
       <!-- <span ng-hide='todo.completed' ng-click='todo.completed = true' class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
 <span ng-show='todo.completed' ng-click='todo.completed = false' class="glyphicon glyphicon-check text-muted" aria-hidden="true"></span> -->
-      <label ng-class="{'text-muted': todo.completed, 'line-through': todo.completed}">{{todo.name}}</label>
+      <label class='item-label' ng-class="{'text-muted': todo.completed, 'line-through': todo.completed}">{{todo.name}}</label>
     </div>
   </div>
   <div class='text-center addAreaContainer small' ng-mouseenter='addAreaContainerAtBottom.mouseover = true' ng-mouseleave='addAreaContainerAtBottom.mouseover = false'>
