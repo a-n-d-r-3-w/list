@@ -35,10 +35,6 @@
 
 .item-label {
   margin-left: 0.5em;
-  width: 18em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 todos {
