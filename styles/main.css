@@ -35,6 +35,10 @@
 
 .item-label {
   margin-left: 0.5em;
+  width: 18em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 todos {
@@ -44,7 +48,7 @@ todos {
 .item-container {
   padding: 0.5em 0.5em;
   position: relative;
-  height: auto;
+  height: 2.5em;
 }
 
 .float-right {
