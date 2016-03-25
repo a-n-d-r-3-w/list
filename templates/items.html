@@ -27,8 +27,8 @@
 
 <!-- Add button container and move target-->
 <div ng-hide='moving' class='text-center' ng-mouseenter='addButtonContainerLast.mouseover = true' ng-mouseleave='addButtonContainerLast.mouseover = false'>
-  <span ng-class='{"visibility-visible": addButtonContainerLast.mouseover}' ng-click="addItem($index)" class="add-item-button glyphicon glyphicon-plus" aria-hidden="true"></span>
+  <span ng-class='{"visibility-visible": addButtonContainerLast.mouseover}' ng-click="addItem()" class="add-item-button glyphicon glyphicon-plus" aria-hidden="true"></span>
 </div>
 <div class='text-center'>
-  <span ng-show='moving' class="glyphicon glyphicon-record" aria-hidden="true" ng-click='moveTo($index)'></span>
+  <span ng-show='moving' class="glyphicon glyphicon-record" aria-hidden="true" ng-click='moveTo()'></span>
 </div>
