@@ -3,7 +3,7 @@
     <div ng-hide='moving' class='text-center' ng-mouseenter='addAreaContainer.mouseover = true' ng-mouseleave='addAreaContainer.mouseover = false'>
       <span ng-class='{"visibility-visible": addAreaContainer.mouseover}' ng-click="addTodo($index)" class="add-item-button glyphicon glyphicon-plus" aria-hidden="true"></span>
     </div>
-    <div class='text-center target'>
+    <div class='text-center'>
       <span ng-show='moving' class="glyphicon glyphicon-record" aria-hidden="true" ng-click='moveTo($index)'></span>
     </div>
     <div class='bg-info item-container' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
@@ -19,7 +19,7 @@
   <div ng-hide='moving' class='text-center' ng-mouseenter='addAreaContainerLast.mouseover = true' ng-mouseleave='addAreaContainerLast.mouseover = false'>
     <span ng-class='{"visibility-visible": addAreaContainerLast.mouseover}' ng-click="addTodo($index)" class="add-item-button glyphicon glyphicon-plus" aria-hidden="true"></span>
   </div>
-  <div class='text-center target'>
+  <div class='text-center'>
     <span ng-show='moving' class="glyphicon glyphicon-record" aria-hidden="true" ng-click='moveTo($index)'></span>
   </div>
 </div>
