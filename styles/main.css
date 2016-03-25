@@ -1,13 +1,15 @@
-.item-editor {
-  width: 100%;
+todos {
+  margin-top: 3em;
 }
 
-.item-completed {
-  text-decoration: line-through;
+.item-container {
+  padding: 0.5em 0.5em;
+  height: 2.5em;
 }
 
 .item-label {
   margin-left: 0.5em;
+  margin-right: 0.5em;
   /* BEGIN: When the text is too long, show ellipsis. */
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -15,24 +17,12 @@
   /* END: When the text is too long, show ellipsis. */
 }
 
-todos {
-  margin-top: 3em;
+.item-completed {
+  text-decoration: line-through;
 }
 
-.item-container {
-  padding: 0.5em 0.5em;
-  position: relative;
-  height: 2.5em;
-}
-
-.add-area {
-  visibility: hidden;
-  /* When the user clicks the area, don't outline it. */
-  outline: none;
-}
-
-.visible {
-  visibility: visible;
+.item-editor {
+  width: 100%;
 }
 
 .item-button {
@@ -47,4 +37,14 @@ todos {
   /* Use a large margin to discourage accidental clicks. */
   margin-left: 2em;
   float: right;
+}
+
+.add-area {
+  visibility: hidden;
+  /* When the user clicks the area, don't outline it. */
+  outline: none;
+}
+
+.visible {
+  visibility: visible;
 }
