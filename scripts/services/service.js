@@ -4,16 +4,16 @@
   var existingModule = angular.module('angularModule');
 
   existingModule.service('service', function($http) {
-    this.getTodos = function(callback) {
-      $http.get('mock/todos.json').then(callback);
+    this.getItems = function(callback) {
+      $http.get('mock/items.json').then(callback);
     };
 
-    this.deleteTodo = function(todo) {
-      console.log("The " + todo.name + " todo has been deleted!");
+    this.deleteItem = function(item) {
+      console.log("The " + item.name + " item has been deleted!");
     };
 
-    this.saveTodos = function(todos) {
-      console.log(todos.length + " todos have been saved!");
+    this.saveItems = function(items) {
+      console.log(items.length + " items have been saved!");
     };
 
   });

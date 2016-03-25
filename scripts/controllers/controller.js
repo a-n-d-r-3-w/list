@@ -5,14 +5,14 @@
   existingModule.controller('controller', function($scope, $timeout, service) {
 
     $scope.moveTo = function(targetIndex) {
-      targetIndex = (typeof targetIndex == 'number') ? targetIndex : $scope.todos.length;
+      targetIndex = (typeof targetIndex == 'number') ? targetIndex : $scope.items.length;
       var sourceIndex = $scope.sourceIndex;
-      var todo = $scope.todos[$scope.sourceIndex];
-      $scope.todos.splice(sourceIndex, 1);
+      var item = $scope.items[$scope.sourceIndex];
+      $scope.items.splice(sourceIndex, 1);
       if (targetIndex > sourceIndex) {
         targetIndex -= 1;
       }
-      $scope.todos.splice(targetIndex, 0, todo);
+      $scope.items.splice(targetIndex, 0, item);
       $scope.moving = false;
     };
 
@@ -23,43 +23,43 @@
 
     $scope.handleKeyDown = function(event, index) {
       var keyCode = event.keyCode;
-      var todo = $scope.todos[index];
+      var item = $scope.items[index];
       if (keyCode === 13) {
-        todo.name = event.target.value;
-        todo.editing = false;
+        item.name = event.target.value;
+        item.editing = false;
         return;
       }
       if (keyCode === 27) {
-        todo.editing = false;
+        item.editing = false;
         return;
       }
     };
 
-    $scope.addTodo = function(index) {
-      var todo = {
+    $scope.addItem = function(index) {
+      var item = {
         name: ''
       };
-      index = (typeof index == 'number') ? index : $scope.todos.length;
-      $scope.todos.splice(index, 0, todo);
-      todo.editing = true;
+      index = (typeof index == 'number') ? index : $scope.items.length;
+      $scope.items.splice(index, 0, item);
+      item.editing = true;
     };
 
-    service.getTodos(function(response) {
-      $scope.todos = response.data;
+    service.getItems(function(response) {
+      $scope.items = response.data;
     });
 
-    $scope.deleteTodo = function(todo, $index) {
-      // service.deleteTodo(todo);
-      $scope.todos.splice($index, 1);
+    $scope.deleteItem = function(item, $index) {
+      // service.deleteItem(item);
+      $scope.items.splice($index, 1);
     };
 
-    $scope.saveTodos = function() {
-      // var filteredTodos = $scope.todos.filter(function(todo) {
-      //   if(todo.edited) {
-      //     return todo;
+    $scope.saveItems = function() {
+      // var filteredItems = $scope.items.filter(function(item) {
+      //   if(item.edited) {
+      //     return item;
       //   };
       // });
-      // service.saveTodos(filteredTodos);
+      // service.saveItems(filteredItems);
     };
   });
 }());
