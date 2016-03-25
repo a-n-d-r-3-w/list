@@ -48,3 +48,7 @@ items {
 .visibility-visible {
   visibility: visible;
 }
+
+.float-right {
+  float: right;
+}

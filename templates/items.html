@@ -11,13 +11,12 @@
   <!-- Item container -->
   <div class='item-container' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false' ng-class='{"bg-info": !item.moving, "bg-primary": item.moving}'>
 
-    <div class='buttons-container'>
-      <button class='dangerous-button btn btn-danger btn-xs' type='button' ng-show='mouseover && !item.editing' ng-click="deleteItem(item, $index)">Delete</button>
-      <button class='safe-button btn btn-success btn-xs' type='button' ng-show='mouseover && !item.completed && !item.editing' ng-click='item.completed = true'>Done</button>
-      <button class='safe-button btn btn-default btn-xs' type='button' ng-show='mouseover && item.completed && !item.editing' ng-click='item.completed = false'>Undone</button>
-      <button class='safe-button btn btn-default btn-xs' type='button' ng-show='mouseover && !item.editing' ng-click='showTargets($index)'>Move</button>
-      <button class='safe-button btn btn-default btn-xs' type='button' ng-show='mouseover && !item.editing' ng-click='item.editing = true'>Edit</button>
-    </div>
+    <!-- Set float = right on each button. If instead we put the buttons in a container and set float = right on the container, then when the mouse moves off of an item, the item label still shows ellipsis. -->
+    <button class='float-right dangerous-button btn btn-danger btn-xs' type='button' ng-show='mouseover && !item.editing' ng-click="deleteItem(item, $index)">Delete</button>
+    <button class='float-right safe-button btn btn-success btn-xs' type='button' ng-show='mouseover && !item.completed && !item.editing' ng-click='item.completed = true'>Done</button>
+    <button class='float-right safe-button btn btn-default btn-xs' type='button' ng-show='mouseover && item.completed && !item.editing' ng-click='item.completed = false'>Undone</button>
+    <button class='float-right safe-button btn btn-default btn-xs' type='button' ng-show='mouseover && !item.editing' ng-click='showTargets($index)'>Move</button>
+    <button class='float-right safe-button btn btn-default btn-xs' type='button' ng-show='mouseover && !item.editing' ng-click='item.editing = true'>Edit</button>
 
     <div ng-hide='item.editing' class='item-label' ng-class="{'text-muted': item.completed, 'item-completed': item.completed}">{{item.name}}</div>
     <input focus-if='item.editing' ng-blur='item.editing = false' ng-keydown='handleKeyDown($event, $index)' class='item-editor small' ng-show='item.editing' ng-type='text' value='{{item.name}}' />
