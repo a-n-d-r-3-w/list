@@ -2,27 +2,8 @@
   width: 100%;
 }
 
-.completed {
+.item-completed {
   text-decoration: line-through;
-}
-
-.add-area {
-  visibility: hidden;
-  /* When the user clicks the area, don't outline it. */
-  outline: none;
-}
-
-.visible {
-  visibility: visible;
-}
-
-.safe-button {
-  margin-left: 0.5em;
-}
-
-.dangerous-button {
-  /* Use a large margin to discourage accidental clicks. */
-  margin-left: 2em;
 }
 
 .item-label {
@@ -44,6 +25,26 @@ todos {
   height: 2.5em;
 }
 
-.float-right {
+.add-area {
+  visibility: hidden;
+  /* When the user clicks the area, don't outline it. */
+  outline: none;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.item-button {
+  float: right;
+}
+
+.safe-button {
+  margin-left: 0.5em;
+}
+
+.dangerous-button {
+  /* Use a large margin to discourage accidental clicks. */
+  margin-left: 2em;
   float: right;
 }
