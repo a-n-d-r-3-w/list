@@ -22,14 +22,16 @@
     };
 
     $scope.handleKeyDown = function(event, index) {
-      var keyCode = event.keyCode;
-      var item = $scope.items[index];
-      if (keyCode === 13) {
+      var keyCode = event.keyCode,
+        item = $scope.items[index],
+        ENTER_KEY_CODE = 13,
+        ESC_KEY_CODE = 27;
+      if (keyCode === ENTER_KEY_CODE) {
         item.name = event.target.value;
         item.editing = false;
         return;
       }
-      if (keyCode === 27) {
+      if (keyCode === ESC_KEY_CODE) {
         item.editing = false;
         if (item.adding) {
           $scope.deleteItem([], index);
