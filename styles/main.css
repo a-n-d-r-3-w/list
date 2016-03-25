@@ -45,6 +45,6 @@ todos {
   outline: none;
 }
 
-.visible {
+.visibility-visible {
   visibility: visible;
 }
