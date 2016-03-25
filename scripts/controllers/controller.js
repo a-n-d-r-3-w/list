@@ -31,6 +31,9 @@
       }
       if (keyCode === 27) {
         item.editing = false;
+        if (item.adding) {
+          $scope.deleteItem([], index);
+        }
         return;
       }
     };
@@ -42,6 +45,7 @@
       index = (typeof index == 'number') ? index : $scope.items.length;
       $scope.items.splice(index, 0, item);
       item.editing = true;
+      item.adding = true;
     };
 
     service.getItems(function(response) {
