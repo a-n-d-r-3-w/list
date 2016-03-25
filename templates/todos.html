@@ -1,12 +1,15 @@
 <div class="list">
   <div ng-repeat="todo in todos" ng-init="todo.completed = false">
+
     <div ng-hide='moving' class='text-center' ng-mouseenter='addButtonContainer.mouseover = true' ng-mouseleave='addButtonContainer.mouseover = false'>
       <span ng-class='{"visibility-visible": addButtonContainer.mouseover}' ng-click="addTodo($index)" class="add-item-button glyphicon glyphicon-plus" aria-hidden="true"></span>
     </div>
     <div class='text-center'>
       <span ng-show='moving' class="glyphicon glyphicon-record" aria-hidden="true" ng-click='moveTo($index)'></span>
     </div>
+
     <div class='bg-info item-container' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
+
       <div class='buttons-container'>
         <button class='dangerous-button btn btn-danger btn-xs' type='button' ng-show='mouseover && !todo.editing' ng-click="deleteTodo(todo, $index)">Delete</button>
         <button class='safe-button btn btn-success btn-xs' type='button' ng-show='mouseover && !todo.completed && !todo.editing' ng-click='todo.completed = true'>Done</button>
@@ -14,8 +17,10 @@
         <button class='safe-button btn btn-default btn-xs' type='button' ng-show='mouseover && !todo.editing' ng-click='showTargets($index)'>Move</button>
         <button class='safe-button btn btn-default btn-xs' type='button' ng-show='mouseover && !todo.editing' ng-click='todo.editing = true'>Edit</button>
       </div>
+
       <div ng-hide='todo.editing' class='item-label' ng-class="{'text-muted': todo.completed, 'item-completed': todo.completed}">{{todo.name}}</div>
       <input focus-if='todo.editing' ng-blur='todo.editing = false' ng-keydown='handleKeyDown($event, $index)' class='item-editor small' ng-show='todo.editing' ng-type='text' value='{{todo.name}}' />
+
     </div>
   </div>
   <div ng-hide='moving' class='text-center' ng-mouseenter='addButtonContainerLast.mouseover = true' ng-mouseleave='addButtonContainerLast.mouseover = false'>
