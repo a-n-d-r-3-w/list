@@ -1,6 +1,7 @@
 <div class="list">
   <div ng-repeat="item in items" ng-init="item.completed = false">
 
+    <!-- Add button container and move target-->
     <div ng-hide='moving' class='text-center' ng-mouseenter='addButtonContainer.mouseover = true' ng-mouseleave='addButtonContainer.mouseover = false'>
       <span ng-class='{"visibility-visible": addButtonContainer.mouseover}' ng-click="addItem($index)" class="add-item-button glyphicon glyphicon-plus" aria-hidden="true"></span>
     </div>
@@ -24,6 +25,7 @@
     </div>
   </div>
 
+  <!-- Add button container and move target-->
   <div ng-hide='moving' class='text-center' ng-mouseenter='addButtonContainerLast.mouseover = true' ng-mouseleave='addButtonContainerLast.mouseover = false'>
     <span ng-class='{"visibility-visible": addButtonContainerLast.mouseover}' ng-click="addItem($index)" class="add-item-button glyphicon glyphicon-plus" aria-hidden="true"></span>
   </div>
