@@ -14,11 +14,13 @@
       }
       $scope.items.splice(targetIndex, 0, item);
       $scope.moving = false;
+      item.moving = false;
     };
 
     $scope.showTargets = function(sourceIndex) {
       $scope.sourceIndex = sourceIndex;
       $scope.moving = true;
+      $scope.items[sourceIndex].moving = true;
     };
 
     $scope.handleKeyDown = function(event, index) {

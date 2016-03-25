@@ -9,7 +9,7 @@
   </div>
 
   <!-- Item container -->
-  <div class='bg-info item-container' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false'>
+  <div class='item-container' ng-mouseenter='mouseover = true' ng-mouseleave='mouseover = false' ng-class='{"bg-info": !item.moving, "bg-primary": item.moving}'>
 
     <div class='buttons-container'>
       <button class='dangerous-button btn btn-danger btn-xs' type='button' ng-show='mouseover && !item.editing' ng-click="deleteItem(item, $index)">Delete</button>
