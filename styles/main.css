@@ -39,9 +39,9 @@ todos {
   float: right;
 }
 
-.add-area {
+.add-item-button {
   visibility: hidden;
-  /* When the user clicks the area, don't outline it. */
+  /* When the user clicks the button, don't outline it. */
   outline: none;
 }
 
