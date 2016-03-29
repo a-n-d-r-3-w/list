@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "angular": "^1.5.3",
+    "body-parser": "^1.15.0",
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
     "mongoose": "^4.4.10",
