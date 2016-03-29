@@ -30771,6 +30771,7 @@ module.exports = 'focus-if';
       $scope.items.splice(targetIndex, 0, item);
       $scope.moving = false;
       item.moving = false;
+      service.saveItems($scope.items);
     };
 
     $scope.showTargets = function(sourceIndex) {
@@ -30793,7 +30794,7 @@ module.exports = 'focus-if';
       if (keyCode === ESC_KEY_CODE) {
         item.editing = false;
         if (item.adding) {
-          $scope.deleteItem([], index);
+          service.saveItems($scope.items);
         }
         return;
       }
@@ -30814,8 +30815,8 @@ module.exports = 'focus-if';
     });
 
     $scope.deleteItem = function(item, $index) {
-      // service.deleteItem(item);
       $scope.items.splice($index, 1);
+      service.saveItems($scope.items);
     };
 
   });
@@ -30855,10 +30856,6 @@ require('./directives/items.js');
 
     this.saveItems = function(items) {
       $http.post('/items', items);
-    };
-
-    this.deleteItem = function(item) {
-      console.log("The " + item.name + " item has been deleted!");
     };
 
   });

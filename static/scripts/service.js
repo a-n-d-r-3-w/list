@@ -13,9 +13,5 @@
       $http.post('/items', items);
     };
 
-    this.deleteItem = function(item) {
-      console.log("The " + item.name + " item has been deleted!");
-    };
-
   });
 }());

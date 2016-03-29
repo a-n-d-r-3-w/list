@@ -15,6 +15,7 @@
       $scope.items.splice(targetIndex, 0, item);
       $scope.moving = false;
       item.moving = false;
+      service.saveItems($scope.items);
     };
 
     $scope.showTargets = function(sourceIndex) {
@@ -37,7 +38,7 @@
       if (keyCode === ESC_KEY_CODE) {
         item.editing = false;
         if (item.adding) {
-          $scope.deleteItem([], index);
+          service.saveItems($scope.items);
         }
         return;
       }
@@ -58,8 +59,8 @@
     });
 
     $scope.deleteItem = function(item, $index) {
-      // service.deleteItem(item);
       $scope.items.splice($index, 1);
+      service.saveItems($scope.items);
     };
 
   });
