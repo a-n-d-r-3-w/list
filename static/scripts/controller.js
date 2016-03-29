@@ -53,7 +53,7 @@
     };
 
     service.getItems(function(response) {
-      $scope.items = response.data;
+      $scope.items = response.data.items;
     });
 
     $scope.deleteItem = function(item, $index) {
