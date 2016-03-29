@@ -7,7 +7,7 @@ require('./database/connector.js');
 require('./database/initializer.js');
 
 var server = express();
-var port = 3000;
+var port = process.env.PORT || 5000;
 
 var DIR_NAME = 'static';
 server.use('/', express.static(DIR_NAME));
