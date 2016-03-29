@@ -7,7 +7,7 @@
     "angular": "^1.5.3",
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
-    "mongoose": "^4.4.9",
+    "mongoose": "^4.4.10",
     "ng-focus-if": "^1.0.5"
   },
   "devDependencies": {
