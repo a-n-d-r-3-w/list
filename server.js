@@ -6,7 +6,7 @@ var port = 3000;
 
 (function serveStaticFiles() {
   var DIR_NAME = 'static';
-  server.use(express.static(DIR_NAME));
+  server.use('/', express.static(DIR_NAME));
 }());
 
 server.listen(port, function() {
