@@ -30855,8 +30855,9 @@ require('./directives/items.js');
   var existingModule = angular.module('angularModule');
 
   existingModule.service('service', function($http) {
+
     this.getItems = function(callback) {
-      $http.get('mock/items.json').then(callback);
+      $http.get('/items').then(callback);
     };
 
     this.deleteItem = function(item) {
