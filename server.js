@@ -18,13 +18,20 @@ server.use(bodyParser.json());
 
 // Create item
 server.post('/items', function(req, res) {
-  var item = req.body;
-  Item.create(item, function(err, item) {
-    if (err) {
-      return res.status(500).json({ err: err.message });
-    }
-    res.json({ 'item': item, message: 'Item created' });
+  var items = req.body;
+  items.forEach(function(item) {
+    console.log(item.name);
   });
+
+  debugger;
+  // Item.create(item, function(err, item) {
+  //   if (err) {
+  //     return res.status(500).json({ err: err.message });
+  //   }
+  //   res.json({ 'item': item, message: 'Item created' });
+  // });
+
+  res.end();
 });
 
 // Retrieve items
@@ -36,21 +43,20 @@ server.get('/items', function(req, res) {
     res.json({ items: items });
   });
 });
-
-// Update item
-server.put('/items/:id', function(req, res) {
-  var id = req.params.id;
-  var item = req.body;
-  if (item && item._id !== id) {
-    return res.status(500).json({ err: "Ids don't match!" });
-  }
-  Item.findByIdAndUpdate(id, item, { new: true }, function(err, item) {
-    if (err) {
-      return res.status(500).json({ err: err.message });
-    }
-    res.json({ 'item': item, message: 'Item updated' });
-  });
-});
+// // Update item
+// server.put('/items/:id', function(req, res) {
+//   var id = req.params.id;
+//   var item = req.body;
+//   if (item && item._id !== id) {
+//     return res.status(500).json({ err: "Ids don't match!" });
+//   }
+//   Item.findByIdAndUpdate(id, item, { new: true }, function(err, item) {
+//     if (err) {
+//       return res.status(500).json({ err: err.message });
+//     }
+//     res.json({ 'item': item, message: 'Item updated' });
+//   });
+// });
 
 // TODO: Add DELETE route to remove existing entries
 

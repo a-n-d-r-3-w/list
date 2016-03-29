@@ -16,7 +16,7 @@ gulp.task('copyBootstrapFiles', function() {
     .pipe(gulp.dest('static/styles/gulp_generated/bootstrap'));
 });
 
-var watcher = gulp.watch('./**/*.*', ['default']);
+var watcher = gulp.watch(['./**/*.*', '!./static/scripts/bundle.js'], ['default']);
 watcher.on('change', function(event) {
   console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 });

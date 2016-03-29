@@ -31,6 +31,7 @@
       if (keyCode === ENTER_KEY_CODE) {
         item.name = event.target.value;
         item.editing = false;
+        service.saveItems($scope.items);
         return;
       }
       if (keyCode === ESC_KEY_CODE) {
@@ -61,13 +62,5 @@
       $scope.items.splice($index, 1);
     };
 
-    $scope.saveItems = function() {
-      // var filteredItems = $scope.items.filter(function(item) {
-      //   if(item.edited) {
-      //     return item;
-      //   };
-      // });
-      // service.saveItems(filteredItems);
-    };
   });
 }());

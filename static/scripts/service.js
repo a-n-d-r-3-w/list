@@ -9,12 +9,12 @@
       $http.get('/items').then(callback);
     };
 
-    this.deleteItem = function(item) {
-      console.log("The " + item.name + " item has been deleted!");
+    this.saveItems = function(items) {
+      $http.post('/items', items);
     };
 
-    this.saveItems = function(items) {
-      console.log(items.length + " items have been saved!");
+    this.deleteItem = function(item) {
+      console.log("The " + item.name + " item has been deleted!");
     };
 
   });

@@ -30787,6 +30787,7 @@ module.exports = 'focus-if';
       if (keyCode === ENTER_KEY_CODE) {
         item.name = event.target.value;
         item.editing = false;
+        service.saveItems($scope.items);
         return;
       }
       if (keyCode === ESC_KEY_CODE) {
@@ -30817,14 +30818,6 @@ module.exports = 'focus-if';
       $scope.items.splice($index, 1);
     };
 
-    $scope.saveItems = function() {
-      // var filteredItems = $scope.items.filter(function(item) {
-      //   if(item.edited) {
-      //     return item;
-      //   };
-      // });
-      // service.saveItems(filteredItems);
-    };
   });
 }());
 },{}],6:[function(require,module,exports){
@@ -30860,12 +30853,12 @@ require('./directives/items.js');
       $http.get('/items').then(callback);
     };
 
-    this.deleteItem = function(item) {
-      console.log("The " + item.name + " item has been deleted!");
+    this.saveItems = function(items) {
+      $http.post('/items', items);
     };
 
-    this.saveItems = function(items) {
-      console.log(items.length + " items have been saved!");
+    this.deleteItem = function(item) {
+      console.log("The " + item.name + " item has been deleted!");
     };
 
   });
