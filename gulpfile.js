@@ -20,10 +20,6 @@ gulp.task('default', function() {
     .pipe(gulp.dest('static/scripts'));
 });
 
-function copyFile(sourceFile, destinationFolder) {
-  gulp.src(sourceFile).pipe(gulp.dest(destinationFolder));
-}
-
 // var watcher = gulp.watch('node_modules/bootstrap/**/*.css', ['copyBootstrapFiles']);
 // watcher.on('change', function(event) {
 //   console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
