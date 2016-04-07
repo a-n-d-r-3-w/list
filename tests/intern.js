@@ -1,3 +1,4 @@
+'use strict';
 // Learn more about configuring this file at <https://theintern.github.io/intern/#configuration>.
 // These default settings work OK for most people. The options that *must* be changed below are the
 // packages, suites, excludeInstrumentation, and (if you want functional tests) functionalSuites
@@ -10,14 +11,15 @@ define({
   // Note that the `build` capability will be filled in with the current commit ID or build tag from the CI
   // environment automatically
   capabilities: {
-    'browserstack.selenium_version': '2.45.0'
+    // 'browserstack.selenium_version': '2.45.0'
   },
 
   // Browsers to run integration testing against. Note that version numbers must be strings if used with Sauce
   // OnDemand. Options that will be permutated are browserName, version, platform, and platformVersion; any other
   // capabilities options specified for an environment will be copied as-is
   environments: [
-    { browserName: 'chrome' }
+    { browsername: 'chrome' }
+    // { browserName: 'chrome', version: '48.0', platform: 'OS X 10.11' }
     // { browserName: 'internet explorer', version: '11', platform: 'WIN8' },
     // { browserName: 'internet explorer', version: '10', platform: 'WIN8' },
     // { browserName: 'internet explorer', version: '9', platform: 'WINDOWS' },
@@ -32,6 +34,7 @@ define({
   // Name of the tunnel class to use for WebDriver tests.
   // See <https://theintern.github.io/intern/#option-tunnel> for built-in options
   tunnel: 'NullTunnel',
+  // tunnel: 'SauceLabsTunnel',
 
   // Configuration options for the module loader; any AMD configuration options supported by the AMD loader in use
   // can be used here.
