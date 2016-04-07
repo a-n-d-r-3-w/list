@@ -5,23 +5,30 @@ define(function(require) {
 
   registerSuite({
     name: 'index',
-    'greeting form': function() {
+    'add items': function() {
       return this.remote
         .get(require.toUrl('http://localhost:5000/index.html'))
         .setFindTimeout(5000)
-        .findByClassName('add-item-button')
-        .moveMouseTo()
-        .click()
-        .end()
-        .sleep(1000)
+
+      .findByClassName('add-item-button')
+        .moveMouseTo().click().end()
         .getActiveElement()
-        .type('asdflkj ;lksjadf;lkasj df;lkasj f;lkadsj ')
-        .sleep(1000)
-        .pressKeys('\uE007')
-        .end()
-        .sleep(1000)
-        .then(function() {
-          assert.strictEqual(1, 1);
+        .type('Item 1').pressKeys('\uE007').end()
+
+      .findByClassName('add-item-button')
+        .moveMouseTo().click().end()
+        .getActiveElement()
+        .type('Item 2').pressKeys('\uE007').end()
+
+      .findByClassName('add-item-button')
+        .moveMouseTo().click().end()
+        .getActiveElement()
+        .type('Item 3').pressKeys('\uE007').end()
+
+      .sleep(1000)
+        .findAllByClassName('item-container')
+        .then(function(elements) {
+          assert.strictEqual(elements.length, 3);
         });
     }
   });
