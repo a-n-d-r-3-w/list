@@ -41,6 +41,14 @@ define(function(require) {
           assert.strictEqual(text, 'Item 2');
         }).end().end()
 
+      .refresh()
+
+      .findByClassName('item-label')
+        .getVisibleText()
+        .then(function(text) {
+          assert.strictEqual(text, 'Item 2');
+        }).end().end()
+
       .findByClassName('item-container').moveMouseTo()
         .findByClassName('delete-item-button')
         .click().end().end()
