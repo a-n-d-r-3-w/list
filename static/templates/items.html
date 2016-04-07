@@ -18,7 +18,7 @@
     <button data-tag-test-id="{{'move-item-button-' + $index}}" class='float-right safe-button btn btn-default btn-xs' type='button' ng-show='mouseover && !item.editing' ng-click='showTargets($index)'>Move</button>
     <button class='edit-item-button float-right safe-button btn btn-default btn-xs' type='button' ng-show='mouseover && !item.editing' ng-click='item.editing = true'>Edit</button>
 
-    <div ng-hide='item.editing' class='item-label' ng-class="{'text-muted': item.completed, 'item-completed': item.completed}">{{item.name}}</div>
+    <div data-tag-test-id="{{'item-label-' + $index}}" ng-hide='item.editing' class='item-label' ng-class="{'text-muted': item.completed, 'item-completed': item.completed}">{{item.name}}</div>
     <input focus-if='item.editing' ng-blur='item.editing = false' ng-keydown='handleKeyDown($event, $index)' class='item-editor small' ng-show='item.editing' ng-type='text' value='{{item.name}}' />
 
   </div>
