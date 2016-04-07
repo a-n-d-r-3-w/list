@@ -37,6 +37,32 @@ define(function(require) {
         .then(function(elements) {
           assert.strictEqual(elements.length, 3);
         })
+        .end()
+
+      .findByClassName('item-container').moveMouseTo()
+        .findByClassName('delete-item-button')
+        .moveMouseTo().click().end().end()
+
+      .findByClassName('item-container').moveMouseTo()
+        .findByClassName('delete-item-button')
+        .moveMouseTo().click().end().end()
+
+      .findByClassName('item-container').moveMouseTo()
+        .findByClassName('delete-item-button')
+        .moveMouseTo().click().end().end()
+
+      .findAllByClassName('item-container')
+        .then(function(elements) {
+          assert.strictEqual(elements.length, 0);
+        })
+        .end()
+
+      .refresh()
+
+      .findAllByClassName('item-container')
+        .then(function(elements) {
+          assert.strictEqual(elements.length, 0);
+        })
         .end();
     }
   });
