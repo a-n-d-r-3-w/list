@@ -4,7 +4,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var Item = require('./database/models/item');
 require('./database/connector.js');
-require('./database/initializer.js');
 
 var server = express();
 var port = process.env.PORT || 5000;
