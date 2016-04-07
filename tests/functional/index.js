@@ -15,12 +15,12 @@ define(function(require) {
         .getActiveElement()
         .type('Item 1').pressKeys('\uE007').end()
 
-      .findByClassName('add-item-button')
+      .findByCssSelector("[data-tag-test-id='add-item-button-0']")
         .moveMouseTo().click().end()
         .getActiveElement()
         .type('Item 2').pressKeys('\uE007').end()
 
-      .findByClassName('add-item-button')
+      .findByCssSelector("[data-tag-test-id='add-item-button-1']")
         .moveMouseTo().click().end()
         .getActiveElement()
         .type('Item 3').pressKeys('\uE007').end()
