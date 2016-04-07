@@ -41,15 +41,15 @@ define(function(require) {
 
       .findByClassName('item-container').moveMouseTo()
         .findByClassName('delete-item-button')
-        .moveMouseTo().click().end().end()
+        .click().end().end()
 
       .findByClassName('item-container').moveMouseTo()
         .findByClassName('delete-item-button')
-        .moveMouseTo().click().end().end()
+        .click().end().end()
 
       .findByClassName('item-container').moveMouseTo()
         .findByClassName('delete-item-button')
-        .moveMouseTo().click().end().end()
+        .click().end().end()
 
       .findAllByClassName('item-container')
         .then(function(elements) {
