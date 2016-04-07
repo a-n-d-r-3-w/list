@@ -35,10 +35,6 @@ define(function(require) {
     },
 
     teardown: function() {
-
-    },
-
-    'Test 1': function() {
       return this.remote
         .get(require.toUrl('http://localhost:5000/index.html'))
 
@@ -53,8 +49,11 @@ define(function(require) {
       .findAllByClassName('item-container')
         .then(function(elements) {
           assert.strictEqual(elements.length, 0);
-        })
-        .end();
+        }).end();
+    },
+
+    'Move to top': function() {
+
     }
   });
 });
