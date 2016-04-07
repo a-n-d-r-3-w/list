@@ -17,20 +17,26 @@ server.use(bodyParser.json());
 server.post('/items', function(req, res) {
   var items = req.body;
   Item.remove({}, function() {});
+  var counter = 0;
   items.forEach(function(item) {
     Item.create(item, function() {});
+    counter++;
   });
   res.end();
+  console.info('Saved ' + counter + ' items');
 });
 
 // Retrieve items
 server.get('/items', function(req, res) {
-  Item.find({}, function(err, items) {
-    if (err) {
-      return res.status(500).json({ message: err.message });
-    }
-    res.json({ items: items });
-  });
+  Item.find({}).sort({ index: 'asc' })
+    .exec(function(err, items) {
+      if (err) {
+        console.error('Error retrieving items');
+        return res.status(500).json({ message: err.message });
+      }
+      res.json({ items: items });
+    });
+  console.info('Retrieved items');
 });
 
 server.listen(port, function() {

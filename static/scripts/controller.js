@@ -4,6 +4,17 @@
   var existingModule = angular.module('angularModule');
   existingModule.controller('controller', function($scope, $timeout, service) {
 
+    var fixIndices = function() {
+      for (var i = 0; i < $scope.items.length; i++) {
+        $scope.items[i].index = i;
+      }
+    };
+
+    $scope.saveItems = function() {
+      fixIndices();
+      service.saveItems($scope.items);
+    };
+
     $scope.moveTo = function(targetIndex) {
       targetIndex = (typeof targetIndex == 'number') ? targetIndex : $scope.items.length;
       var sourceIndex = $scope.sourceIndex;
@@ -15,7 +26,7 @@
       $scope.items.splice(targetIndex, 0, item);
       $scope.moving = false;
       item.moving = false;
-      service.saveItems($scope.items);
+      $scope.saveItems($scope.items);
     };
 
     $scope.showTargets = function(sourceIndex) {
@@ -32,13 +43,13 @@
       if (keyCode === ENTER_KEY_CODE) {
         item.name = event.target.value;
         item.editing = false;
-        service.saveItems($scope.items);
+        $scope.saveItems($scope.items);
         return;
       }
       if (keyCode === ESC_KEY_CODE) {
         item.editing = false;
         if (item.adding) {
-          service.saveItems($scope.items);
+          $scope.saveItems($scope.items);
         }
         return;
       }
@@ -52,16 +63,27 @@
       $scope.items.splice(index, 0, item);
       item.editing = true;
       item.adding = true;
+      $scope.saveItems($scope.items);
+    };
+
+    $scope.markDone = function(index) {
+      $scope.items[index].completed = true;
+      $scope.saveItems($scope.items);
+    };
+
+    $scope.markUndone = function(index) {
+      $scope.items[index].completed = false;
+      $scope.saveItems($scope.items);
+    };
+
+    $scope.deleteItem = function(item, $index) {
+      $scope.items.splice($index, 1);
+      $scope.saveItems($scope.items);
     };
 
     service.getItems(function(response) {
       $scope.items = response.data.items;
     });
-
-    $scope.deleteItem = function(item, $index) {
-      $scope.items.splice($index, 1);
-      service.saveItems($scope.items);
-    };
 
   });
 }());
