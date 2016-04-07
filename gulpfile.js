@@ -6,7 +6,8 @@ var vinylSourceStream = require('vinyl-source-stream');
 
 gulp.task('default', function() {
   // Bundle JS files
-  browserify('static/scripts/moduleCreator.js').bundle()
+  browserify('static/scripts/moduleCreator.js', { debug: true })
+    .bundle()
     .pipe(vinylSourceStream('bundle.js'))
     .pipe(gulp.dest('static/scripts'));
 });
