@@ -25,11 +25,19 @@ define(function(require) {
         .getActiveElement()
         .type('Item 3').pressKeys('\uE007').end()
 
-      .sleep(1000)
-        .findAllByClassName('item-container')
+      .findAllByClassName('item-container')
         .then(function(elements) {
           assert.strictEqual(elements.length, 3);
-        });
+        })
+        .end()
+
+      .refresh()
+
+      .findAllByClassName('item-container')
+        .then(function(elements) {
+          assert.strictEqual(elements.length, 3);
+        })
+        .end();
     }
   });
 });
