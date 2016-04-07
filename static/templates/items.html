@@ -16,7 +16,7 @@
     <button class='float-right safe-button btn btn-success btn-xs' type='button' ng-show='mouseover && !item.completed && !item.editing' ng-click='markDone($index)'>Done</button>
     <button class='float-right safe-button btn btn-default btn-xs' type='button' ng-show='mouseover && item.completed && !item.editing' ng-click='markUndone($index)'>Undone</button>
     <button class='float-right safe-button btn btn-default btn-xs' type='button' ng-show='mouseover && !item.editing' ng-click='showTargets($index)'>Move</button>
-    <button class='float-right safe-button btn btn-default btn-xs' type='button' ng-show='mouseover && !item.editing' ng-click='item.editing = true'>Edit</button>
+    <button class='edit-item-button float-right safe-button btn btn-default btn-xs' type='button' ng-show='mouseover && !item.editing' ng-click='item.editing = true'>Edit</button>
 
     <div ng-hide='item.editing' class='item-label' ng-class="{'text-muted': item.completed, 'item-completed': item.completed}">{{item.name}}</div>
     <input focus-if='item.editing' ng-blur='item.editing = false' ng-keydown='handleKeyDown($event, $index)' class='item-editor small' ng-show='item.editing' ng-type='text' value='{{item.name}}' />
