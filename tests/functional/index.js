@@ -8,7 +8,7 @@ define(function(require) {
     'add items': function() {
       return this.remote
         .get(require.toUrl('http://localhost:5000/index.html'))
-        .setFindTimeout(5000)
+        .setFindTimeout(500)
 
       .findByClassName('add-item-button')
         .moveMouseTo().click().end()
