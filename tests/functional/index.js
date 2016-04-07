@@ -5,7 +5,7 @@ define(function(require) {
 
   registerSuite({
     name: 'index',
-    'add items': function() {
+    'add and delete items': function() {
       return this.remote
         .get(require.toUrl('http://localhost:5000/index.html'))
         .setFindTimeout(500)
