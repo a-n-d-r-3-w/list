@@ -13,6 +13,7 @@ define(function(require) {
       setup: function() {
         listPage = new ListPage(this.remote);
       },
+
       beforeEach: function() {
         return listPage
           .addItems('Item 1', 'Item 2')
