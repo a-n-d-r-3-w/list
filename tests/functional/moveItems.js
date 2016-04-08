@@ -16,27 +16,16 @@ define(function(require) {
       beforeEach: function() {
         return listPage
           .addItems('Item 1', 'Item 2')
-          .then(function(addedItems) {
-            assert.isTrue(addedItems);
+          .then(function(success) {
+            assert.isTrue(success);
           });
       },
 
       afterEach: function() {
-        return this.remote
-          .get(require.toUrl('http://localhost:5000/index.html'))
-
-        .findByClassName('item-container').moveMouseTo()
-          .findByClassName('delete-item-button')
-          .click().end().end()
-
-        .findByClassName('item-container').moveMouseTo()
-          .findByClassName('delete-item-button')
-          .click().end().end()
-
-        .findAllByClassName('item-container')
-          .then(function(elements) {
-            assert.strictEqual(elements.length, 0);
-          }).end();
+        return listPage.deleteItems()
+          .then(function(success) {
+            assert.isTrue(success);
+          });
       },
 
       'Move to bottom': function() {
