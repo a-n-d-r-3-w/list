@@ -3,9 +3,10 @@ define(function(require) {
   var registerSuite = require('intern!object');
   var assert = require('intern/chai!assert');
   var ListPage = require('../support/pages/ListPage');
-  var listPage;
 
   registerSuite(function() {
+
+    var listPage;
 
     return {
       name: 'move items',
@@ -13,32 +14,11 @@ define(function(require) {
         listPage = new ListPage(this.remote);
       },
       beforeEach: function() {
-        return this.remote
-          .get(require.toUrl('http://localhost:5000/index.html'))
-
-        .findByCssSelector("[data-tag-test-id='last-add-item-button']")
-          .moveMouseTo().click().end()
-
-        .getActiveElement()
-          .type('Item 1').pressKeys('\uE007').end()
-
-        .findByCssSelector("[data-tag-test-id='last-add-item-button']")
-          .moveMouseTo().click().end()
-
-        .getActiveElement()
-          .type('Item 2').pressKeys('\uE007').end()
-
-        .findByCssSelector("[data-tag-test-id='item-label-0']")
-          .getVisibleText()
-          .then(function(text) {
-            assert.strictEqual(text, 'Item 1');
-          }).end().end()
-
-        .findByCssSelector("[data-tag-test-id='item-label-1']")
-          .getVisibleText()
-          .then(function(text) {
-            assert.strictEqual(text, 'Item 2');
-          }).end().end();
+        return listPage
+          .addItems('Item 1', 'Item 2')
+          .then(function(addedItems) {
+            assert.isTrue(addedItems);
+          });
       },
 
       afterEach: function() {
