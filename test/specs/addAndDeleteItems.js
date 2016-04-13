@@ -21,30 +21,26 @@ function deleteItem () {
   deleteButton.click();
 }
 
-describe('webdriver.io page', function () {
+describe('list', function () {
 
-  beforeEach(function () {
+  it('add, refresh, delete, refresh', function () {
     browser.url('http://localhost:5000');
     browser.waitForExist("[data-tag-test-id='last-add-item-button']");
     browser.moveToObject("[data-tag-test-id='last-add-item-button']");
-
-
-
     addItem('Item 1');
     addItem('Item 2');
     addItem('Item 3');
     assertNumItems(3);
-  });
 
-  afterEach(function () {
+    browser.refresh();
+    assertNumItems(3);
+
     deleteItem();
     deleteItem();
     deleteItem();
     assertNumItems(0);
-  });
 
-  it('test page', function () {
-
-
+    browser.refresh();
+    assertNumItems(0);
   });
 });
