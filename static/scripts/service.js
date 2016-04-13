@@ -7,8 +7,8 @@
       $http.get('/items').then(callback);
     };
 
-    this.saveItems = function(items) {
-      $http.post('/items', items);
+    this.saveItems = function(items, callback) {
+      $http.post('/items', items).then(callback);
     };
 
   });

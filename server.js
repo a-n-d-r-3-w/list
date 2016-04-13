@@ -2,6 +2,7 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
+var q = require('q');
 var Item = require('./database/models/item');
 require('./database/connector.js');
 
@@ -16,40 +17,26 @@ server.use(bodyParser.json());
 // Save items
 server.post('/items', function(req, res) {
   var items = req.body;
+  var queue = [];
 
   for (var i = 0; i < items.length; i++) {
     var item = items[i];
     var id = item._id;
-    console.info('Name: ' + item.name);
     if (id) {
-      console.info('Found _id: ' + id + ' and updating index.');
-      Item.findByIdAndUpdate(id, {$set: {index: item.index}});
+      queue.push(Item.findByIdAndUpdate(id, {$set: {index: item.index}}));
     } else {
-      console.info('Id not found');
       var newItem = new Item(item);
-      newItem.save(function (err, newItem) {
+      queue.push(newItem.save(function (err, newItem) {
         if (err) {
           console.error(err);
-        } else {
-          console.info('Added item: ' + newItem.name);
         }
-        // Get updated items from db and store in angular
-
-        // Or is there some way mongoose can notify the angular app?
-      })
+      }));
     }
+
+    q.all(queue).then(function (results) {
+      res.json({items: results});
+    });
   }
-
-  setTimeout(function () {
-    res.end();
-  }, 5000);
-
-  // Item.remove({}, function() {
-  //   Item.collection.insert(items, function () {
-  //     res.end();
-  //     console.info('Saved items');
-  //   })
-  // });
 });
 
 // Retrieve items

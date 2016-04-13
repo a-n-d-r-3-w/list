@@ -12,7 +12,10 @@
 
     $scope.saveItems = function() {
       fixIndices();
-      service.saveItems($scope.items);
+      service.saveItems($scope.items, function (response) {
+        var items = response.data.items;
+        $scope.items = items;
+      });
     };
 
     $scope.moveTo = function(targetIndex) {
@@ -43,7 +46,7 @@
       if (keyCode === ENTER_KEY_CODE) {
         item.name = event.target.value;
         item.editing = false;
-        $scope.saveItems($scope.items);
+        $scope.saveItems();
         return;
       }
       if (keyCode === ESC_KEY_CODE) {
