@@ -24,7 +24,11 @@ server.post('/items', function(req, res) {
     var id = item._id;
     if (id) {
       var returnNewItem = true;
-      queue.push(Item.findByIdAndUpdate(id, {$set: {index: item.index, completed: item.completed}}, {new: returnNewItem}));
+      queue.push(Item.findByIdAndUpdate(id, {$set: {
+        name: item.name,
+        index: item.index,
+        completed: item.completed
+      }}, {new: returnNewItem}));
     } else {
       var newItem = new Item(item);
       queue.push(newItem.save(function (err, newItem) {
