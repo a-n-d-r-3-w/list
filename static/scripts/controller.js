@@ -15,11 +15,6 @@
       service.saveItems($scope.items, function (response) {
         var items = response.data.items;
         $scope.items = items;
-        console.info('Received data');
-        for (var i = 0; i < $scope.items.length; i++){
-          console.info('Name: ' + items[i].name);
-          console.info('Completed: ' + items[i].completed);
-        }
       });
     };
 

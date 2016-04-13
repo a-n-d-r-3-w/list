@@ -23,8 +23,6 @@ server.post('/items', function(req, res) {
     var item = items[i];
     var id = item._id;
     if (id) {
-      console.info('Name: ' + item.name);
-      console.info('Completed: ' + item.completed);
       var returnNewItem = true;
       queue.push(Item.findByIdAndUpdate(id, {$set: {index: item.index, completed: item.completed}}, {new: returnNewItem}));
     } else {
