@@ -28,7 +28,7 @@ function assertText (index, expectedText) {
 }
 
 function editItem (index, newText) {
-  var containerSelector = "[data-tag-test-id='item-container-" + index + "']"
+  var containerSelector = "[data-tag-test-id='item-container-" + index + "']";
   browser.moveToObject(containerSelector);
   var container = browser.element(containerSelector);
   var editItemButton = container.element('.edit-item-button');
@@ -38,10 +38,22 @@ function editItem (index, newText) {
   editor.setValue(newText + '\uE007');
 }
 
+function moveItemToBottom (index) {
+  var containerSelector = "[data-tag-test-id='item-container-" + index + "']";
+  browser.moveToObject(containerSelector);
+  var container = browser.element(containerSelector);
+  var moveItemButton = container.element( "[data-tag-test-id='move-item-button-" + index + "']");
+  moveItemButton.click();
+
+  var target = browser.element("[data-tag-test-id='last-move-target']");
+  target.click();
+}
+
 module.exports = {
   assertNumItems: assertNumItems,
   addItem: addItem,
   deleteItem: deleteItem,
   assertText: assertText,
-  editItem: editItem
+  editItem: editItem,
+  moveItemToBottom: moveItemToBottom
 };
