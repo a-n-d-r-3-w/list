@@ -33,8 +33,8 @@ server.post('/items', function(req, res) {
       }));
     }
 
-    q.all(queue).then(function (results) {
-      res.json({items: results});
+    q.all(queue).then(function (items) {
+      res.json({items: items});
     });
   }
 });

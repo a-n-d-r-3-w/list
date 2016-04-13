@@ -29,7 +29,7 @@
       $scope.items.splice(targetIndex, 0, item);
       $scope.moving = false;
       item.moving = false;
-      $scope.saveItems($scope.items);
+      $scope.saveItems();
     };
 
     $scope.showTargets = function(sourceIndex) {
@@ -66,22 +66,21 @@
       $scope.items.splice(index, 0, item);
       item.editing = true;
       item.adding = true;
-      // $scope.saveItems($scope.items);
     };
 
     $scope.markDone = function(index) {
       $scope.items[index].completed = true;
-      $scope.saveItems($scope.items);
+      $scope.saveItems();
     };
 
     $scope.markUndone = function(index) {
       $scope.items[index].completed = false;
-      $scope.saveItems($scope.items);
+      $scope.saveItems();
     };
 
     $scope.deleteItem = function(item, $index) {
       $scope.items.splice($index, 1);
-      $scope.saveItems($scope.items);
+      $scope.saveItems();
     };
 
     service.getItems(function(response) {
