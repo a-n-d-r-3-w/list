@@ -1,8 +1,0 @@
-language: node_js
-node_js:
-  - '4.2.2'
-script: node_modules/.bin/intern-runner config=tests/intern
-addons:
-  sauce_connect:
-    username: "andrewaliu"
-    access_key: "92056c90-f06f-42bc-8b04-3408bed55bb7"
