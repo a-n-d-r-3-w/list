@@ -38,13 +38,22 @@ function editItem (index, newText) {
   editor.setValue(newText + '\uE007');
 }
 
-function moveItemToBottom (index) {
+function clickMoveItem(index) {
   var containerSelector = "[data-tag-test-id='item-container-" + index + "']";
   browser.moveToObject(containerSelector);
   var container = browser.element(containerSelector);
   var moveItemButton = container.element( "[data-tag-test-id='move-item-button-" + index + "']");
   moveItemButton.click();
+}
 
+function moveItemToBottom (index) {
+  clickMoveItem();
+  var target = browser.element("[data-tag-test-id='last-move-target']");
+  target.click();
+}
+
+function moveItemToTop (index) {
+  clickMoveItem();
   var target = browser.element("[data-tag-test-id='last-move-target']");
   target.click();
 }
@@ -55,5 +64,6 @@ module.exports = {
   deleteItem: deleteItem,
   assertText: assertText,
   editItem: editItem,
-  moveItemToBottom: moveItemToBottom
+  moveItemToBottom: moveItemToBottom,
+  moveItemToTop: moveItemToTop
 };
