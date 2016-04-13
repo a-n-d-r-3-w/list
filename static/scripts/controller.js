@@ -49,7 +49,7 @@
       if (keyCode === ESC_KEY_CODE) {
         item.editing = false;
         if (item.adding) {
-          $scope.saveItems($scope.items);
+          // $scope.saveItems($scope.items);
         }
         return;
       }
@@ -63,7 +63,7 @@
       $scope.items.splice(index, 0, item);
       item.editing = true;
       item.adding = true;
-      $scope.saveItems($scope.items);
+      // $scope.saveItems($scope.items);
     };
 
     $scope.markDone = function(index) {
