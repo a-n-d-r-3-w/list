@@ -27,17 +27,18 @@ describe('list', function () {
     browser.url('http://localhost:5000');
     browser.waitForExist("[data-tag-test-id='last-add-item-button']");
     browser.moveToObject("[data-tag-test-id='last-add-item-button']");
-    addItem('Item 1');
-    addItem('Item 2');
-    addItem('Item 3');
-    assertNumItems(3);
+    var NUM_ITEMS = 10;
+    for (var i = 0; i < NUM_ITEMS; i++) {
+      addItem('Item ' + i);
+    }
+    assertNumItems(NUM_ITEMS);
 
     browser.refresh();
-    assertNumItems(3);
+    assertNumItems(NUM_ITEMS);
 
-    deleteItem();
-    deleteItem();
-    deleteItem();
+    for (var i = 0; i < NUM_ITEMS; i++) {
+      deleteItem();
+    }
     assertNumItems(0);
 
     browser.refresh();
