@@ -7,6 +7,7 @@ describe('list', function () {
     browser.waitForExist("[data-tag-test-id='last-add-item-button']");
     browser.moveToObject("[data-tag-test-id='last-add-item-button']");
     utils.addItem('Original item');
+    utils.assertText(0, 'Original item');
   });
 
   afterEach(function() {
@@ -15,8 +16,9 @@ describe('list', function () {
 
   it('edit, refresh', function () {
     // edit item
-    // assert item text
+    utils.assertText(0, 'Edited item');
+
     browser.refresh();
-    // assert item text
+    utils.assertText(0, 'Edited item');
   });
 });

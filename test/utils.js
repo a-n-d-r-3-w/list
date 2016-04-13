@@ -21,8 +21,15 @@ function deleteItem () {
   deleteButton.click();
 }
 
+function assertText (index, expectedText) {
+  var selector = "[data-tag-test-id='item-label-" + index + "']"
+  var actualText = browser.getText(selector);
+  assert.equal(actualText, expectedText)
+}
+
 module.exports = {
   assertNumItems: assertNumItems,
   addItem: addItem,
-  deleteItem: deleteItem
+  deleteItem: deleteItem,
+  assertText: assertText
 };
