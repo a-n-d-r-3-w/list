@@ -15,7 +15,9 @@
     "browserify": "^13.0.0",
     "gulp": "^3.9.1",
     "intern": "^3.1.1",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "wdio-mocha-framework": "^0.2.12",
+    "webdriverio": "^4.0.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
