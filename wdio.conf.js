@@ -11,7 +11,7 @@ exports.config = {
     //
     specs: [
         // './test/specs/**/*.js'
-        './test/specs/editItems.js'
+        './test/specs/moveItem.js'
     ],
     // Patterns to exclude.
     exclude: [
