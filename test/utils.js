@@ -47,14 +47,14 @@ function clickMoveItem(index) {
 }
 
 function moveItemToBottom (index) {
-  clickMoveItem();
+  clickMoveItem(index);
   var target = browser.element("[data-tag-test-id='last-move-target']");
   target.click();
 }
 
 function moveItemToTop (index) {
-  clickMoveItem();
-  var target = browser.element("[data-tag-test-id='last-move-target']");
+  clickMoveItem(index);
+  var target = browser.element("[data-tag-test-id='move-target-0']");
   target.click();
 }
 
