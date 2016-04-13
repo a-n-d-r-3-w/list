@@ -15,7 +15,7 @@ describe('list', function () {
   });
 
   it('edit, refresh', function () {
-    // edit item
+    utils.editItem(0, 'Edited item');
     utils.assertText(0, 'Edited item');
 
     browser.refresh();

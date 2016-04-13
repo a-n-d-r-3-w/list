@@ -27,9 +27,21 @@ function assertText (index, expectedText) {
   assert.equal(actualText, expectedText)
 }
 
+function editItem (index, newText) {
+  var containerSelector = "[data-tag-test-id='item-container-" + index + "']"
+  browser.moveToObject(containerSelector);
+  var container = browser.element(containerSelector);
+  var editItemButton = container.element('.edit-item-button');
+  editItemButton.click();
+  var editor = browser.elementActive();
+  editor.waitForVisible();
+  editor.setValue(newText + '\uE007');
+}
+
 module.exports = {
   assertNumItems: assertNumItems,
   addItem: addItem,
   deleteItem: deleteItem,
-  assertText: assertText
+  assertText: assertText,
+  editItem: editItem
 };
