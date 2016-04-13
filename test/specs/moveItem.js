@@ -55,4 +55,16 @@ describe('list', function () {
     utils.assertText(1, 'Item 0');
     utils.assertText(2, 'Item 2');
   });
+
+  it('move up, refresh', function () {
+    utils.moveItemUp(2, 1);
+    utils.assertText(0, 'Item 0');
+    utils.assertText(1, 'Item 2');
+    utils.assertText(2, 'Item 1');
+
+    browser.refresh();
+    utils.assertText(0, 'Item 0');
+    utils.assertText(1, 'Item 2');
+    utils.assertText(2, 'Item 1');
+  });
 });

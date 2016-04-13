@@ -64,6 +64,12 @@ function moveItemDown(srcIndex, destIndex) {
   target.click();
 }
 
+function moveItemUp(srcIndex, destIndex) {
+  clickMoveItem(srcIndex);
+  var target = browser.element("[data-tag-test-id='move-target-" + destIndex + "']");
+  target.click();
+}
+
 module.exports = {
   assertNumItems: assertNumItems,
   addItem: addItem,
@@ -72,5 +78,6 @@ module.exports = {
   editItem: editItem,
   moveItemToBottom: moveItemToBottom,
   moveItemToTop: moveItemToTop,
-  moveItemDown: moveItemDown
+  moveItemDown: moveItemDown,
+  moveItemUp: moveItemUp
 };
