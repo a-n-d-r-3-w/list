@@ -16,14 +16,12 @@ server.use(bodyParser.json());
 // Save items
 server.post('/items', function(req, res) {
   var items = req.body;
-  Item.remove({}, function() {});
-  var counter = 0;
-  items.forEach(function(item) {
-    Item.create(item, function() {});
-    counter++;
+  Item.remove({}, function() {
+    Item.collection.insert(items, function () {
+      res.end();
+      console.info('Saved items');
+    })
   });
-  res.end();
-  console.info('Saved ' + counter + ' items');
 });
 
 // Retrieve items

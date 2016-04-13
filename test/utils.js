@@ -15,7 +15,9 @@ function addItem (text) {
 }
 
 function deleteItem () {
-  browser.moveToObject("[data-tag-test-id='item-container-0']");
+  var selector = "[data-tag-test-id='item-container-0']";
+  browser.waitForExist(selector);
+  browser.moveToObject(selector);
   var deleteButton = browser.element("[data-tag-test-id='item-container-0'] .delete-item-button");
   deleteButton.waitForVisible();
   deleteButton.click();
@@ -23,6 +25,7 @@ function deleteItem () {
 
 function assertText (index, expectedText) {
   var selector = "[data-tag-test-id='item-label-" + index + "']"
+  browser.waitForExist(selector);
   var actualText = browser.getText(selector);
   assert.equal(actualText, expectedText)
 }
