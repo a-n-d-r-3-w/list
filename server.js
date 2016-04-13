@@ -40,6 +40,14 @@ server.post('/items', function(req, res) {
   }
 });
 
+// Delete item
+server.post('/deleteItem', function (req, res) {
+  var item = req.body;
+  Item.remove({_id: item._id}, function () {
+    res.end();
+  });
+});
+
 // Retrieve items
 server.get('/items', function(req, res) {
   Item.find({}).sort({ index: 'asc' })

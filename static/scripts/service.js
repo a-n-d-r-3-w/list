@@ -11,5 +11,8 @@
       $http.post('/items', items).then(callback);
     };
 
+    this.deleteItem = function (item) {
+      $http.post('/deleteItem', item);
+    };
   });
 }());

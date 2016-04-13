@@ -80,6 +80,7 @@
 
     $scope.deleteItem = function(item, $index) {
       $scope.items.splice($index, 1);
+      service.deleteItem(item);
       $scope.saveItems();
     };
 
