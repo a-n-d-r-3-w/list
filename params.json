@@ -1,0 +1,6 @@
+{
+  "name": "List",
+  "tagline": "A list app implemented using MongoDB, Express, Angular, and Node.js, and tested using WebdriverIO and Mocha",
+  "body": "**List** is a web application that allows the user to create, edit, delete, and move list items, as well as mark them complete. The UI is designed to be minimal, with elements appearing only when necessary.\r\n\r\nYou can try it [here](https://peaceful-earth-39305.herokuapp.com/). (It might take a minute to load the first time because it's running on a free dyno on Heroku.)",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
