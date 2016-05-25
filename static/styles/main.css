@@ -73,6 +73,11 @@ items {
   outline: none;
 }
 
+.move-target {
+  font-size: 18px;
+  color: rgba(255,255,255,0.8);
+}
+
 .visibility-visible {
   visibility: visible;
 }

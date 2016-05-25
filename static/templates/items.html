@@ -4,7 +4,7 @@
   <div ng-hide='moving' class='text-center' ng-mouseenter='addButtonContainer.mouseover = true' ng-mouseleave='addButtonContainer.mouseover = false'>
     <span data-tag-test-id="{{'add-item-button-' + $index}}" ng-class='{"visibility-visible": addButtonContainer.mouseover}' ng-click="addItem($index)" class="add-item-button glyphicon glyphicon-plus" aria-hidden="true"></span>
   </div>
-  <div class='text-center'>
+  <div class='text-center move-target'>
     <span data-tag-test-id="{{'move-target-' + $index}}" ng-show='moving' class="glyphicon glyphicon-record" aria-hidden="true" ng-click='moveTo($index)'></span>
   </div>
 
@@ -28,6 +28,6 @@
 <div ng-hide='moving' class='text-center' ng-mouseenter='addButtonContainerLast.mouseover = true' ng-mouseleave='addButtonContainerLast.mouseover = false'>
   <span data-tag-test-id='last-add-item-button' ng-class='{"visibility-visible": addButtonContainerLast.mouseover}' ng-click="addItem()" class="add-item-button glyphicon glyphicon-plus" aria-hidden="true"></span>
 </div>
-<div class='text-center'>
+<div class='text-center move-target'>
   <span data-tag-test-id="last-move-target" ng-show='moving' class="glyphicon glyphicon-record" aria-hidden="true" ng-click='moveTo()'></span>
 </div>
